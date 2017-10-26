@@ -31,7 +31,7 @@ const Navbar = () => (
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Freie Schule Bergmeilen" />
+    <Helmet title="Freie Schule Bergmeilen" />
     <Navbar />
     <div>{children()}</div>
   </div>
