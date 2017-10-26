@@ -1,4 +1,4 @@
-# Gatsby + Netlify CMS Starter
+# Freie Schule Bergmeilen
 
 This repo contains an example blog that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](netlifycms.org): https://gatsby-netlify-cms.netlify.com/.
 
