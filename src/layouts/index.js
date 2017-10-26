@@ -10,7 +10,7 @@ const Navbar = () => (
     <div className="container">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
-          Gatsby powered by Netlify CMS
+          Freie Schule Bergmeilen
         </Link>
       </div>
       <div className="navbar-start">
