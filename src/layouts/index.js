@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-import github from '../img/github-icon.svg';
+import fbIcon from '../img/fb-icon.svg';
 import 'bulma';
 
 const Navbar = () => (
@@ -19,9 +19,9 @@ const Navbar = () => (
         </Link>
       </div>
       <div className="navbar-end">
-        <a className="navbar-item" href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate" target="_blank">
+        <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
           <span className="icon">
-            <img src={github} alt="Github" />
+            <img src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook" />
           </span>
         </a>
       </div>
