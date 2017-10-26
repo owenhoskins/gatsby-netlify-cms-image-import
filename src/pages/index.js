@@ -1,28 +1,48 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import _ from 'lodash';
+
+const MAX_NEWS_ITEM_TO_SHOW = 3;
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
+  const isNewsItem = post => post.node.frontmatter.templateKey === 'news-item'
+  const news = _.take(posts.filter(isNewsItem), MAX_NEWS_ITEM_TO_SHOW)
+
   return (
     <section className="section">
-      <div className="container">
-        {posts.filter(post => post.node.frontmatter.templateKey === 'news-item').map(({ node: post }) => {
+      <div className="columns">
+        {news.map(({ node: post }) => {
           return (
-            <div className="content" style={{ border: '1px solid #eaecee', padding: '2em 4em' }} key={post.id}>
-              <p>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-                <span> &bull; </span>
-                <small>{post.frontmatter.date}</small>
-              </p>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button is-info is-small" to={post.frontmatter.path}>
-                  Keep Reading
-                </Link>
-              </p>
+            <div className="column">
+              <div className="card"
+                   key={post.id}
+              >
+                {
+                  post.frontmatter.image &&
+                    <div className="card-image">
+                      <img src={post.frontmatter.image}/>
+                    </div>
+                }
+                <div className="card-content">
+                  <h3>
+                    <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+                  </h3>
+                  <p>
+                    <small>{post.frontmatter.date}</small>
+                  </p>
+                  <br/>
+                  <p>
+                    {post.excerpt}
+                    <br />
+                    <br />
+                    <Link className="button is-info is-small" to={post.frontmatter.path}>
+                      Weiterlesen...
+                    </Link>
+                  </p>
+                </div>
+              </div>
             </div>
           );
         })}
@@ -40,6 +60,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
+            image
             templateKey
             date(formatString: "MMMM DD, YYYY")
             path

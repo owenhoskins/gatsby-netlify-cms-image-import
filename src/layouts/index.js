@@ -10,13 +10,13 @@ const Navbar = () => (
     <div className="container">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
-          Freie Schule Bergmeilen
+          Aktuelles
         </Link>
       </div>
       <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
+        <Link className="navbar-item" to="/basisstufe">Basisstufe</Link>
+        <Link className="navbar-item" to="/philosophy">Leitende Gedanken</Link>
+        <Link className="navbar-item" to="/about">Über uns</Link>
       </div>
       <div className="navbar-end">
         <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
