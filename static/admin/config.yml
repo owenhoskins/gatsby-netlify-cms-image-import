@@ -7,7 +7,7 @@ public_folder: "img"
 
 collections:
   - name: "news" # Used in routes, e.g., /admin/collections/blog
-    label: "News" # Used in the UI
+    label: "Aktuelles" # Used in the UI
     folder: "src/pages/news" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -15,14 +15,15 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "news"}
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
 
   - name: "about" # Used in routes, e.g., /admin/collections/blog
-    label: "About" # Used in the UI
+    label: "Über uns" # Used in the UI
     folder: "src/pages/about" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
+    create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
