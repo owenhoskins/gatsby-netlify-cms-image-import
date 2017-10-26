@@ -17,7 +17,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Template", name: "templateKey", widget: "string", default: "blog-post" }
+      - {label: "Template", name: "templateKey", widget: "hidden", default: "blog-post" }
 
   - name: "about" # Used in routes, e.g., /admin/collections/blog
     label: "About" # Used in the UI
@@ -29,4 +29,4 @@ collections:
       - {label: "Path", name: "path", widget: "hidden", default: "/about"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Template", name: "templateKey", widget: "string", default: "about-page" }
+      - {label: "Template", name: "templateKey", widget: "hidden", default: "about-page" }
