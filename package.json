@@ -11,7 +11,10 @@
     "gatsby-plugin-sass": "^1.0.12",
     "gatsby-remark-images": "^1.5.18",
     "gatsby-source-filesystem": "^1.5.5",
-    "gatsby-transformer-remark": "^1.7.17"
+    "gatsby-transformer-remark": "^1.7.17",
+    "glamor": "^2.20.40",
+    "react-slick": "^0.15.4",
+    "slick-carousel": "^1.8.1"
   },
   "keywords": [
     "gatsby"

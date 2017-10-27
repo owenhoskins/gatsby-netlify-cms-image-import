@@ -12,41 +12,37 @@ export default function Index({ data }) {
 
   return (
     <section className="section">
-      <div className="columns">
         {news.map(({ node: post }) => {
           return (
-            <div className="column">
-              <div className="card"
-                   key={post.id}
-              >
-                {
-                  post.frontmatter.image &&
-                    <div className="card-image">
-                      <img src={post.frontmatter.image}/>
-                    </div>
-                }
-                <div className="card-content">
-                  <h3>
-                    <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-                  </h3>
-                  <p>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <br/>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-info is-small" to={post.frontmatter.path}>
-                      Weiterlesen...
-                    </Link>
-                  </p>
+            <div className="box"
+                 key={post.id}
+            >
+              {
+                post.frontmatter.image &&
+                <div className="card-image">
+                  <img src={post.frontmatter.image}/>
                 </div>
+              }
+              <div className="card-content">
+                <h3>
+                  <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+                </h3>
+                <p>
+                  <small>{post.frontmatter.date}</small>
+                </p>
+                <br/>
+                <p>
+                  {post.excerpt}
+                  <br />
+                  <br />
+                  <Link className="button is-info is-small" to={post.frontmatter.path}>
+                    Weiterlesen...
+                  </Link>
+                </p>
               </div>
             </div>
           );
         })}
-      </div>
     </section>
   );
 }
