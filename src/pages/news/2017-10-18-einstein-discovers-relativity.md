@@ -1,5 +1,4 @@
 ---
-layout: news
 path: /einstein
 title: Mit dem blauen Luftballon
 image: /img/luftballon2.png

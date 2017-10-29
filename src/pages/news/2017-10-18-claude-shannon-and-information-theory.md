@@ -1,5 +1,4 @@
 ---
-layout: news
 path: /claude
 title: Philosophie
 date: 2017-10-14T12:00:02.000Z
