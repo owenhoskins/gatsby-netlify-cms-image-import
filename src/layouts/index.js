@@ -67,20 +67,26 @@ const TemplateWrapper = ({ children, ...props }) => (
   <div>
     <Helmet title="Freie Schule Bergmeilen" />
     <section className="hero is-info is-medium is-bold">
-      <div className="hero-head">
-        <Navbar/>
+      <div className="container">
+        <div className="hero-head">
+          <Navbar/>
+        </div>
+        { props.location.pathname === '/' &&
+        <div className="hero-body" style={{ padding: '2rem 10rem' }}>
+          <Carousel/>
+        </div>
+        }
       </div>
-      { props.location.pathname === '/' &&
-      <div className="hero-body" style={{ padding: '2rem 10rem' }}>
-        <Carousel/>
-      </div>
-      }
     </section>
 
+    <div className="column is-8 is-offset-2">
     <div>{children()}</div>
+    </div>
 
     <footer className="footer">
-      Freie Schule Bergmeilen
+      <div className="container">
+        &copy; { new Date().getFullYear() } Freie Schule Bergmeilen
+      </div>
     </footer>
   </div>
 );
