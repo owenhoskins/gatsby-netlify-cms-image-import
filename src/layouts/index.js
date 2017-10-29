@@ -17,13 +17,14 @@ const Carousel = () => {
   ]
 
   const renderPhoto = (url) =>
-    <div
-      key={url}
-      style={{
-        background: `url(${url}) 50% 50% no-repeat`,
-        height: 450
-      }}
-    />
+    <img className="image" src={url}/>
+    {/*<div*/}
+      {/*key={url}*/}
+      {/*style={{*/}
+        {/*background: `url(${url}) 50% 50% no-repeat`,*/}
+        {/*height: 450*/}
+      {/*}}*/}
+    {/*/>*/}
 
   return (
     <div>
