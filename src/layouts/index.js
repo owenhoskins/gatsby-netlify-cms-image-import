@@ -16,6 +16,10 @@ const Carousel = () => {
     'img/foto-team.jpg'
   ]
 
+  return (
+    <img className="image" src={photos[0]} />
+  )
+
   const renderPhoto = (url) =>
     <img className="image" src={url}/>
     {/*<div*/}
