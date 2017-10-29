@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import fbIcon from '../img/fb-icon.svg';
 import 'bulma';
+
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -27,12 +28,14 @@ const Carousel = () =>
     </Slider>
   </div>
 
+
+
 const Navbar = () => (
   <nav className="navbar">
     <div className="container">
       <div className="navbar-brand">
         <a className="navbar-item" href="../">
-          <h2 className="subtitle">Freie Schule Bergmeilen</h2>
+          <h1 className="subtitle">Freie Schule Bergmeilen</h1>
         </a>
         <span className="navbar-burger burger" data-target="navbarMenu">
           <span></span>
@@ -59,25 +62,23 @@ const Navbar = () => (
   </nav>
 );
 
-const Hero = () =>
-  <section className="hero is-info is-medium is-bold">
-    <div className="hero-head">
-      <Navbar/>
-    </div>
-    <div className="hero-body">
-      <div className="container has-text-centered">
-        <Carousel/>
-      </div>
-    </div>
-  </section>
 
-
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, ...props }) => (
   <div>
     <Helmet title="Freie Schule Bergmeilen" />
-    <Hero/>
+    <section className="hero is-info is-medium is-bold">
+      <div className="hero-head">
+        <Navbar/>
+      </div>
+      { props.location.pathname === '/' &&
+      <div className="hero-body" style={{ padding: '2rem 10rem' }}>
+        <Carousel/>
+      </div>
+      }
+    </section>
 
     <div>{children()}</div>
+
     <footer className="footer">
       Freie Schule Bergmeilen
     </footer>

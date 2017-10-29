@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
 import _ from 'lodash';
+
 
 const MAX_NEWS_ITEM_TO_SHOW = 3;
 
@@ -12,39 +12,33 @@ export default function Index({ data }) {
 
   return (
     <section className="section">
-        {news.map(({ node: post }) => {
-          return (
-            <div className="box"
-                 key={post.id}
-            >
-              {
-                post.frontmatter.image &&
-                <div className="card-image">
-                  <img src={post.frontmatter.image}/>
-                </div>
-              }
-              <div className="card-content">
-                <h3>
-                  <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-                </h3>
-                <p>
-                  <small>{post.frontmatter.date}</small>
-                </p>
+      {news.map(({ node: post }) => {
+        return (
+          <div className="box"
+               key={post.id}
+          >
+            <div className="card-content">
+              <h3>
+                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+              </h3>
+              <p>
+                <small>{post.frontmatter.date}</small>
+              </p>
+              <br/>
+              <p>
+                {post.excerpt}
                 <br/>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-info is-small" to={post.frontmatter.path}>
-                    Weiterlesen...
-                  </Link>
-                </p>
-              </div>
+                <br/>
+                <Link className="button is-info is-small" to={post.frontmatter.path}>
+                  Weiterlesen...
+                </Link>
+              </p>
             </div>
-          );
-        })}
+          </div>
+        );
+      })}
     </section>
-  );
+  )
 }
 
 export const pageQuery = graphql`

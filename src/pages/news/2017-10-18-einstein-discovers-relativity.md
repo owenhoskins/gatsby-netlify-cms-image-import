@@ -2,6 +2,7 @@
 layout: news
 path: /einstein
 title: Mit dem blauen Luftballon
+image: /img/luftballon2.png
 date: 2017-10-18T17:12:33.962Z
 templateKey: news-item
 ---
