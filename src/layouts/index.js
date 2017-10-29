@@ -9,24 +9,36 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Carousel = () =>
-  <div style={{ padding: 20 }}>
-    <Slider
-      dots
-      infinite
-      speed={1000}
-      slidesToShow={1}
-      slidesToScroll={1}
-      adaptiveHeight={false}
-    >
-      <div style={{
-        background: 'url(img/foto-team.jpg) 50% 50% no-repeat',
-        height: 500
-      }} />
+const Carousel = () => {
 
-      <div><h3>2</h3></div>
-    </Slider>
-  </div>
+  const photos = [
+    'img/foto-team.jpg'
+  ]
+
+  const renderPhoto = (url) =>
+    <div
+      key={url}
+      style={{
+        background: `url(${url}) 50% 50% no-repeat`,
+        height: 450
+      }}
+    />
+
+  return (
+    <figure>
+      <Slider
+        dots
+        infinite
+        speed={1000}
+        slidesToShow={1}
+        slidesToScroll={1}
+        adaptiveHeight={false}
+      >
+        {photos.map(renderPhoto)}
+      </Slider>
+    </figure>
+  )
+}
 
 
 
