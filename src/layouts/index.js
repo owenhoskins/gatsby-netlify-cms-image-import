@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import fbIcon from '../img/fb-icon.svg';
 import 'bulma';
+import './style.scss'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css';
@@ -25,7 +26,7 @@ const Carousel = () => {
     />
 
   return (
-    <figure>
+    <div>
       <Slider
         dots
         infinite
@@ -36,7 +37,7 @@ const Carousel = () => {
       >
         {photos.map(renderPhoto)}
       </Slider>
-    </figure>
+    </div>
   )
 }
 
@@ -47,7 +48,7 @@ const Navbar = () => (
     <div className="container">
       <div className="navbar-brand">
         <a className="navbar-item" href="../">
-          <h1 className="subtitle">Freie Schule Bergmeilen</h1>
+          <h1 className="title">Freie Schule Bergmeilen</h1>
         </a>
         <span className="navbar-burger burger" data-target="navbarMenu">
           <span></span>
