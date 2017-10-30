@@ -85,7 +85,7 @@ const TemplateWrapper = ({ children, ...props }) => (
     <Helmet title="Freie Schule Bergmeilen" />
 
     <div className="container">
-      <nav className="navbar" style={{ padding: '0.5rem 0'}}>
+      <nav className="navbar" style={{ padding: '0.75rem 0'}}>
         <div className="navbar-brand">
           <a className="navbar-item" href="../">
             <h1 className="title">Freie Schule Bergmeilen</h1>
@@ -117,6 +117,11 @@ const TemplateWrapper = ({ children, ...props }) => (
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link " href="/philosophie">
                 Philosophie
+              </a>
+            </div>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link " href="/about">
+                Über uns
               </a>
             </div>
 
@@ -179,9 +184,7 @@ const TemplateWrapper = ({ children, ...props }) => (
     {/*</nav>*/}
 
 
-    <section className="section">
     <div className="container">{children()}</div>
-    </section>
 
     <footer className="footer">
       <div className="container">
