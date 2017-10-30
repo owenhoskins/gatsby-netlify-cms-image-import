@@ -1,5 +1,5 @@
 ---
 path: /team
-templateKey: 'about-page'
+templateKey: 'page'
 title: Team
 ---

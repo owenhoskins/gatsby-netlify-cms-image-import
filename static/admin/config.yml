@@ -30,4 +30,4 @@ collections:
       - {label: "Path", name: "path", widget: "hidden", default: "/about"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Template", name: "templateKey", widget: "hidden", default: "about-page" }
+      - {label: "Template", name: "templateKey", widget: "hidden", default: "page" }

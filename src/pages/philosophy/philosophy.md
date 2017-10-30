@@ -1,5 +1,5 @@
 ---
 path: /philosophy
-templateKey: 'about-page'
+templateKey: 'page'
 title: Leitende Gedanken
 ---

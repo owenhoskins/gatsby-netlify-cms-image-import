@@ -10,50 +10,35 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Carousel = () => {
+const photos = [
+  'img/foto-team.jpg'
+]
 
-  const photos = [
-    'img/foto-team.jpg'
-  ]
 
-  return (
-    <figure
-      className="image"
+const Carousel = () =>
+  <div style={{ padding: '0 1rem'}}>
+    <Slider
+      dots
+      infinite
+      speed={1000}
+      slidesToShow={1}
+      slidesToScroll={1}
+      adaptiveHeight={false}
     >
-      <img
-        src={photos[0]}
-      />
-    </figure>
-  )
+      {photos.map(url =>
+        <figure
+          key={url}
+          className="image"
+          style={{ padding: '0 1rem'}}
+        >
+          <img
+            src={url}
+          />
+        </figure>
 
-  const renderPhoto = (url) =>
-    <img src={url}/>
-    {/*<div*/}
-      {/*key={url}*/}
-      {/*style={{*/}
-        {/*background: `url(${url}) 50% 50% no-repeat`,*/}
-        {/*height: 450*/}
-      {/*}}*/}
-    {/*/>*/}
-
-  return (
-    <figure
-      className="image"
-      style={{ textAlign: 'center' }}
-    >
-      <Slider
-        dots
-        infinite
-        speed={1000}
-        slidesToShow={1}
-        slidesToScroll={1}
-        adaptiveHeight={false}
-      >
-        {photos.map(renderPhoto)}
-      </Slider>
-    </figure>
-  )
-}
+      )}
+    </Slider>
+  </div>
 
 
 
@@ -95,37 +80,12 @@ const Navbar = () => (
 
 
 const TemplateWrapper = ({ children, ...props }) => (
-/*
+
   <div>
     <Helmet title="Freie Schule Bergmeilen" />
+
     <div className="container">
-      <Navbar/>
-    </div>
-    <section className="hero is-info is-bold">
-      <div className="container">
-        { props.location.pathname === '/' &&
-        <div className="hero-head" style={{ padding: '2rem 10rem' }}>
-          <Carousel/>
-        </div>
-        }
-      </div>
-    </section>
-
-    <div className="column is-8 is-offset-2">
-    <div>{children()}</div>
-    </div>
-
-    <footer className="footer">
-      <div className="container">
-        &copy; { new Date().getFullYear() } Freie Schule Bergmeilen
-      </div>
-    </footer>
-  </div>
-   */
-
-  <div>
-    <div className="container">
-      <nav className="navbar ">
+      <nav className="navbar" style={{ padding: '0.5rem 0'}}>
         <div className="navbar-brand">
           <a className="navbar-item" href="../">
             <h1 className="title">Freie Schule Bergmeilen</h1>
@@ -177,16 +137,17 @@ const TemplateWrapper = ({ children, ...props }) => (
 
     </div>
 
+    { props.location.pathname === '/' &&
     <section className="hero is-info is-bold">
       <div className="hero-body">
+        <div className="container">
+          <Carousel/>
+        </div>
+      </div>
+    </section>
+    }
 
-          <div className="container">
-            { props.location.pathname === '/' &&
-            <div className="hero-head" style={{ padding: '2rem 10rem' }}>
-              <Carousel/>
-            </div>
-            }
-          </div>
+
 
 
         {/*<div className="container">*/}
@@ -206,9 +167,6 @@ const TemplateWrapper = ({ children, ...props }) => (
             {/*</div>*/}
           {/*</div>*/}
         {/*</div>*/}
-      </div>
-
-    </section>
 
 
 

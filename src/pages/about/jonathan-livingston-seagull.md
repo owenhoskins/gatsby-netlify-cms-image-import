@@ -1,7 +1,7 @@
 ---
 path: /about
 title: Jonathan Livingston Seagull
-templateKey: about-page
+templateKey: page
 ---
 ![logo](/img/fsb-logo2.jpg)
 

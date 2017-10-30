@@ -1,6 +1,6 @@
 ---
 layout: about
 path: /basisstufe
-templateKey: 'about-page'
+templateKey: 'page'
 title: Basisstufe
 ---
