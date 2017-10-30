@@ -17,11 +17,17 @@ const Carousel = () => {
   ]
 
   return (
-    <img className="image" src={photos[0]} />
+    <figure
+      className="image"
+    >
+      <img
+        src={photos[0]}
+      />
+    </figure>
   )
 
   const renderPhoto = (url) =>
-    <img className="image" src={url}/>
+    <img src={url}/>
     {/*<div*/}
       {/*key={url}*/}
       {/*style={{*/}
@@ -31,7 +37,10 @@ const Carousel = () => {
     {/*/>*/}
 
   return (
-    <div>
+    <figure
+      className="image"
+      style={{ textAlign: 'center' }}
+    >
       <Slider
         dots
         infinite
@@ -42,38 +51,42 @@ const Carousel = () => {
       >
         {photos.map(renderPhoto)}
       </Slider>
-    </div>
+    </figure>
   )
 }
 
 
 
 const Navbar = () => (
-  <nav className="navbar">
-    <div className="container">
-      <div className="navbar-brand">
-        <a className="navbar-item" href="../">
-          <h1 className="title">Freie Schule Bergmeilen</h1>
-        </a>
-        <span className="navbar-burger burger" data-target="navbarMenu">
+  <nav className="navbar" style={{ padding: '20px 0'}}>
+    <div className="navbar-brand">
+      <a className="navbar-item" href="../">
+        <h1 className="title">Freie Schule Bergmeilen</h1>
+      </a>
+      <span className="navbar-burger burger" data-target="navbarMenu">
           <span></span>
           <span></span>
           <span></span>
         </span>
-      </div>
-      <div id="navbarMenu" className="navbar-menu">
+    </div>
+    <div id="navbarMenu" className="navbar-menu">
 
+      <div className="navbar-end">
         <div className="navbar-end">
-          <div className="navbar-end">
-            <Link className="navbar-item" to="/basisstufe">Angebot</Link>
-            <Link className="navbar-item" to="/philosophy">Philosophie</Link>
-            <Link className="navbar-item" to="/about">Über uns</Link>
-            <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
+          <Link className="navbar-item" to="/basisstufe">Angebot</Link>
+          <Link className="navbar-item" to="/philosophy">Philosophie</Link>
+          <Link className="navbar-item" to="/about">Über uns</Link>
+          <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
               <span className="icon">
-                <img src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook" />
+                <img
+                  src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook"
+                  style={{
+                    filter: 'grayscale(100%)',
+                    opacity: 0.2,
+                  }}
+                />
               </span>
-            </a>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -82,15 +95,16 @@ const Navbar = () => (
 
 
 const TemplateWrapper = ({ children, ...props }) => (
+/*
   <div>
     <Helmet title="Freie Schule Bergmeilen" />
-    <section className="hero is-info is-medium is-bold">
+    <div className="container">
+      <Navbar/>
+    </div>
+    <section className="hero is-info is-bold">
       <div className="container">
-        <div className="hero-head">
-          <Navbar/>
-        </div>
         { props.location.pathname === '/' &&
-        <div className="hero-body" style={{ padding: '2rem 10rem' }}>
+        <div className="hero-head" style={{ padding: '2rem 10rem' }}>
           <Carousel/>
         </div>
         }
@@ -106,6 +120,118 @@ const TemplateWrapper = ({ children, ...props }) => (
         &copy; { new Date().getFullYear() } Freie Schule Bergmeilen
       </div>
     </footer>
+  </div>
+   */
+
+  <div>
+    <div className="container">
+      <nav className="navbar ">
+        <div className="navbar-brand">
+          <a className="navbar-item" href="../">
+            <h1 className="title">Freie Schule Bergmeilen</h1>
+          </a>
+
+          <div className="navbar-burger burger" data-target="navMenuDocumentation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+
+        <div id="navMenuDocumentation" className="navbar-menu">
+          <div className="navbar-end">
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link" href="/basisstufe">
+                Angebot
+              </a>
+              <div className="navbar-dropdown ">
+                <a className="navbar-item " href="/basisstufe">
+                  Basisstufe
+                </a>
+                <a className="navbar-item " href="/primarstufe">
+                  Primarstufe
+                </a>
+              </div>
+            </div>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link " href="/philosophie">
+                Philosophie
+              </a>
+            </div>
+
+            <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
+                <span className="icon">
+                  <img
+                    src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook"
+                    style={{
+                      filter: 'grayscale(100%)',
+                      opacity: 0.2,
+                    }}
+                  />
+                </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+
+    <section className="hero is-info is-bold">
+      <div className="hero-body">
+
+          <div className="container">
+            { props.location.pathname === '/' &&
+            <div className="hero-head" style={{ padding: '2rem 10rem' }}>
+              <Carousel/>
+            </div>
+            }
+          </div>
+
+
+        {/*<div className="container">*/}
+          {/*<div className="columns is-vcentered">*/}
+            {/*<div className="column">*/}
+              {/*<p className="title">*/}
+                {/*Documentation*/}
+              {/*</p>*/}
+              {/*<p className="subtitle">*/}
+                {/*Everything you need to <strong>create a website</strong> with Bulma*/}
+              {/*</p>*/}
+            {/*</div>*/}
+            {/*<div className="column is-narrow">*/}
+              {/*<div id="carboncontainer">*/}
+              {/*</div>*/}
+
+            {/*</div>*/}
+          {/*</div>*/}
+        {/*</div>*/}
+      </div>
+
+    </section>
+
+
+
+    {/*<nav className="navbar has-shadow">*/}
+      {/*<div className="container">*/}
+
+        {/*</div>*/}
+      {/*</div>*/}
+
+    {/*</nav>*/}
+
+
+    <section className="section">
+    <div className="container">{children()}</div>
+    </section>
+
+    <footer className="footer">
+      <div className="container">
+        &copy; { new Date().getFullYear() } Freie Schule Bergmeilen
+      </div>
+    </footer>
+
+
   </div>
 );
 

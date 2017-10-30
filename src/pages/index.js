@@ -12,31 +12,44 @@ export default function Index({ data }) {
 
   return (
     <section className="section">
-      {news.map(({ node: post }) => {
-        return (
-          <div className="box"
-               key={post.id}
-          >
-            <div className="card-content">
-              <h3>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h3>
-              <p>
-                <small>{post.frontmatter.date}</small>
-              </p>
-              <br/>
-              <p>
-                {post.excerpt}
-                <br/>
-                <br/>
-                <Link className="button is-info is-small" to={post.frontmatter.path}>
-                  Weiterlesen...
-                </Link>
-              </p>
-            </div>
-          </div>
-        );
-      })}
+      <div className="columns">
+        <div className="column">
+
+          <h2 className="title">Lernen und Motivation</h2>
+
+          Die Hirnforschung zeigt uns, dass nachhaltiges Lernen nur da möglich ist, wo ein Interesse des Lernenden am Stoff besteht. Deshalb ist multisensorisches Lernen zum richtigen (vom Kind selbst gewählten) Zeitpunkt der beste Weg, Inhalte langfristig im Gehirn abzuspeichern.
+          Unsere Schule bietet Lerninhalte an, die auf den Lehrplan abgestimmt sind. Die Inhalte werden den Kindern so angeboten, dass sie dem Entdecker- und Forscherdrang der Kinder gerecht werden. Lehrer und Begleitpersonen sind jederzeit für das Kind da und begleiten es, damit es möglichst viele Lernziele ohne Druck erreichen kann.
+          Kinder können sehr schnell lernen, wenn sie etwas Interessantes entdecken, deshalb stehen bei uns schon im Kindergarten Lerninhalte zur Verfügung, die über diese Stufe hinausgehen.
+
+        </div>
+        <div className="column">
+          <h2 className="title">Aktuelles</h2>
+          {news.map(({ node: post }) => {
+            return (
+              <div
+                className="box"
+                key={post.id}
+              >
+                  <h3>
+                    <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+                  </h3>
+                  <p>
+                    <small>{post.frontmatter.date}</small>
+                  </p>
+                  <br/>
+                  <p>
+                    {post.excerpt}
+                    <br/>
+                    <br/>
+                    <Link className="button is-info is-small" to={post.frontmatter.path}>
+                      Weiterlesen...
+                    </Link>
+                  </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   )
 }

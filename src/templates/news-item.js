@@ -6,7 +6,7 @@ export default function Template({ data }) {
   return (
     <section className="section">
       <Helmet title={`${post.frontmatter.title}`} />
-      <div className="container content">
+      <div className="content">
         <h1 className="title is-size-2 has-text-info is-bold-light">{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
