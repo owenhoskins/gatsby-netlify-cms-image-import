@@ -28,7 +28,7 @@ export default function Index({ data }) {
           {/*</p>*/}
 
           <h2 className="title">Unsere Ziele</h2>
-          <p className="content">
+          <div className="content">
             <h4>Das Kind ganzheitlich wahrnehmen</h4>
             Wir schaffen einen Ort, an dem sich Kinder zuhause fühlen und an dem sie ihr Potential entfalten kann. Wir möchten Kinder in ihrer Ganzheit wahrzunehmen und den verschiedenen Wesen mit Respekt und Gleichheit zu begegnen. Wir achten die Kreativität und die Besonderheit jedes Individuums. Wir geben den Kindern Zeit, sich selber und die eigenen Bedürfnisse kennenzulernen
             <br/><br/>
@@ -49,7 +49,7 @@ export default function Index({ data }) {
             <br/><br/>
             <h4>Eine starke Gemeinschaft aufbauen</h4>
             Wir legen Wert darauf, dass Schule und Eltern am gleichen Strick ziehen. Die Eltern, das Kind und die Schule sehen wir als gleichwertige Partner an, die ein gemeinsames Ziel verfolgen. Als Erwachsene leben wir den Kindern vor, dass Gemeinschaft stark macht und fördern das Miteinander durch verschiedene Projekte und Anlässen, an denen die Eltern sich beteiligen können.
-          </p>
+          </div>
 
         </div>
         <div className="column">
