@@ -19,7 +19,6 @@ const Carousel = () =>
   <div style={{
     padding: '0 1.5rem',
     overflow: 'hidden',
-    maxHeight: 200
   }}>
     <Slider
       dots
