@@ -6,43 +6,14 @@ import logo from '../img/logo-tree.svg';
 import fbIcon from '../img/fb-icon.svg';
 import 'bulma';
 import './style.scss'
+import Carousel from '../components/Carousel'
 
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const photos = [
   'img/foto-team.jpg'
 ]
 
 
-const Carousel = () =>
-  <div style={{
-    padding: '0 1.5rem',
-    overflow: 'hidden',
-  }}>
-    <Slider
-      dots={false}
-      infinite
-      speed={1000}
-      slidesToShow={1}
-      slidesToScroll={1}
-      adaptiveHeight={false}
-    >
-      {photos.map(url =>
-        <figure
-          key={url}
-          className="image"
-          style={{ padding: '0 1rem'}}
-        >
-          <img
-            src={url}
-          />
-        </figure>
-
-      )}
-    </Slider>
-  </div>
 
 
 
@@ -83,10 +54,12 @@ const Navbar = () => (
 );
 
 
-const TemplateWrapper = ({ children, ...props }) => (
+
+
+export default ({ children, data, ...props }) => (
 
   <div>
-    <Helmet title="Freie Schule Bergmeilen" />
+    <Helmet title={data.site.siteMetadata.title} />
 
     <div className="container">
       <nav className="navbar" style={{ marginTop: '0.75rem'}}>
@@ -97,7 +70,7 @@ const TemplateWrapper = ({ children, ...props }) => (
             style={{ margin: '0 0 0 1rem'}}
           />
           <a className="navbar-item" href="../">
-            <h1 className="title">Freie Schule Bergmeilen</h1>
+            <h1 className="title">{data.site.siteMetadata.title}</h1>
           </a>
 
           <div className="navbar-burger burger" data-target="navMenuDocumentation">
@@ -151,46 +124,15 @@ const TemplateWrapper = ({ children, ...props }) => (
 
     </div>
 
-    { props.location.pathname === '/' &&
     <section className="hero is-info is-bold">
       <div className="hero-body">
         <div className="container">
-          <Carousel/>
+        { props.location.pathname === '/' &&
+          <Carousel images={data.carouselImages.edges}/>
+        }
         </div>
       </div>
     </section>
-    }
-
-
-
-
-        {/*<div className="container">*/}
-          {/*<div className="columns is-vcentered">*/}
-            {/*<div className="column">*/}
-              {/*<p className="title">*/}
-                {/*Documentation*/}
-              {/*</p>*/}
-              {/*<p className="subtitle">*/}
-                {/*Everything you need to <strong>create a website</strong> with Bulma*/}
-              {/*</p>*/}
-            {/*</div>*/}
-            {/*<div className="column is-narrow">*/}
-              {/*<div id="carboncontainer">*/}
-              {/*</div>*/}
-
-            {/*</div>*/}
-          {/*</div>*/}
-        {/*</div>*/}
-
-
-
-    {/*<nav className="navbar has-shadow">*/}
-      {/*<div className="container">*/}
-
-        {/*</div>*/}
-      {/*</div>*/}
-
-    {/*</nav>*/}
 
 
     <div className="container">{children()}</div>
@@ -203,10 +145,42 @@ const TemplateWrapper = ({ children, ...props }) => (
 
 
   </div>
-);
+)
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
-};
 
-export default TemplateWrapper;
+export const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+
+    carouselImages: allImageSharp(filter: { id:{ regex: "/carousel/"}}) {
+      edges {
+        node {
+          ... on ImageSharp {
+            sizes(maxHeight:400, quality: 90) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
+      }
+    }
+    
+  }
+`
+
+// carouselImages: imageSharp(id: { regex: "/carousel/" }) {
+//   sizes(
+//     duotone: { highlight: "#f00e2e", shadow: "#192550" }
+//     traceSVG: {
+//       color: "#f00e2e"
+//       turnPolicy: TURNPOLICY_MINORITY
+//       blackOnWhite: false
+//     }
+//     toFormat: PNG
+//   ) {
+//     src
+//   }
+// }
