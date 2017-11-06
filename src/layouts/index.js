@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import logo from '../img/logo-tree.svg';
 import fbIcon from '../img/fb-icon.svg';
 import 'bulma';
 import './style.scss'
@@ -21,7 +22,7 @@ const Carousel = () =>
     overflow: 'hidden',
   }}>
     <Slider
-      dots
+      dots={false}
       infinite
       speed={1000}
       slidesToShow={1}
@@ -88,8 +89,13 @@ const TemplateWrapper = ({ children, ...props }) => (
     <Helmet title="Freie Schule Bergmeilen" />
 
     <div className="container">
-      <nav className="navbar" style={{ padding: '0.75rem 0'}}>
+      <nav className="navbar" style={{ marginTop: '0.75rem'}}>
         <div className="navbar-brand">
+          <img
+            className="image"
+            src={logo}
+            style={{ margin: '0 0 0 1rem'}}
+          />
           <a className="navbar-item" href="../">
             <h1 className="title">Freie Schule Bergmeilen</h1>
           </a>
