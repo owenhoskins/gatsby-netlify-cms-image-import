@@ -4,11 +4,9 @@ title: 'Vortrag: Lernen - Bewegen - Entwickeln'
 date: 2017-09-18T17:12:33.962Z
 templateKey: news-item
 ---
+## Lernen – Bewegen – Entwickeln mit Maja Berbier
 
-#Lernen – Bewegen – Entwickeln mit Maja Berbier
-
-*Mittwoch 27. September, 19:30*
-
+_Mittwoch 27. September, 19:30_
 
 > „Die Aufgabe der Umgebung ist es nicht, das Kind zu formen, sondern ihm zu erlauben sich zu offenbaren“
 
@@ -21,16 +19,12 @@ Dieser Vortrag richtet sich an Eltern, Lernbegleiter, Lehrpersonen, Spielgruppen
 * Anmeldung: Name/Anzahl Personen: kunzmartina@gmx.ch
 * Kosten: Fr. 15.- pro Person/ 20.- pro Paar
 * Referentin:	Maja Berbier, Bewegungsanalytikerin, Entwicklungsbegleiterin und Lerntrainerin
-[www.bewusstinbewegungsein.ch](http://www.bewusstinbewegungsein.ch)
+  [www.bewusstinbewegungsein.ch](http://www.bewusstinbewegungsein.ch)
 
+## Informationsanlässe für interessierte Familien
 
-
-#Informationsanlässe für interessierte Familien
-
-*Mittwoch 15. November um 19:00 im Schulhaus*
+_Mittwoch 15. November um 19:00 im Schulhaus_
 
 Interessierte Eltern sind herzlich zu einem Informationsanlass in der Schule eingeladen. Wir stellen uns vor, informieren über den Wochenablauf und beantworten Fragen zum freien Lernen und zu unserer Schule. Ein einfacher Apéro im Anschluss an den Informationsteil bietet Gelegenheit für persönliche Gespräche und Austausch.
 Wir bitten um eine Anmeldung per email fsbergmeilen@gmx.net oder per Kontaktformular mit Namen, Anzahl Erwachsene und Kinder, Datum des Anlasses.
 Kinder sind herzlich willkommen, Spielmöglichkeiten sind vorhanden.
-
-
