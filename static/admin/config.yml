@@ -15,7 +15,7 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "news"}
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Image", name: "image", widget: "image", required: false}
+      #- {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
