@@ -41,3 +41,9 @@ a {
 .hero.is-info.is-bold {
   background-image: linear-gradient(141deg, #209cee 0%, #04a6d7 71%, #3287f5 100%);
 }
+
+@media screen and (max-width: 500px) {
+  .navbar-brand .navbar-item h1.title {
+    font-size: 1.65rem;
+  }
+}

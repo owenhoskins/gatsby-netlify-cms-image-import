@@ -9,13 +9,6 @@ import './style.scss'
 import Carousel from '../components/Carousel'
 
 
-const photos = [
-  'img/foto-team.jpg'
-]
-
-
-
-
 
 const Navbar = () => (
   <nav className="navbar" style={{ padding: '20px 0'}}>
@@ -63,12 +56,21 @@ export default ({ children, data, ...props }) => (
 
     <div className="container">
       <nav className="navbar" style={{ marginTop: '0.75rem'}}>
-        <div className="navbar-brand">
-          <img
-            className="image"
-            src={logo}
-            style={{ margin: '0 0 0 1rem'}}
-          />
+        <div
+          className="navbar-brand"
+          style={{
+            paddingLeft: 50,
+            backgroundImage: `url(${logo})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPositionX: 10,
+            minHeight: 64,
+          }}
+        >
+          {/*<img*/}
+            {/*className="image"*/}
+            {/*src={logo}*/}
+            {/*style={{ margin: '0 0 0 1rem'}}*/}
+          {/*/>*/}
           <a className="navbar-item" href="../">
             <h1 className="title">{data.site.siteMetadata.title}</h1>
           </a>
@@ -160,7 +162,7 @@ export const query = graphql`
       edges {
         node {
           ... on ImageSharp {
-            sizes(maxHeight:400, quality: 90) {
+            sizes(maxHeight:350, quality: 90, cropFocus: ENTROPY) {
               ...GatsbyImageSharpSizes
             }
           }
