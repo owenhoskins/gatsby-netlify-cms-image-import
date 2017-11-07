@@ -9,46 +9,6 @@ import './style.scss'
 import Carousel from '../components/Carousel'
 
 
-
-const Navbar = () => (
-  <nav className="navbar" style={{ padding: '20px 0'}}>
-    <div className="navbar-brand">
-      <a className="navbar-item" href="../">
-        <h1 className="title">Freie Schule Bergmeilen</h1>
-      </a>
-      <span className="navbar-burger burger" data-target="navbarMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-    </div>
-    <div id="navbarMenu" className="navbar-menu">
-
-      <div className="navbar-end">
-        <div className="navbar-end">
-          <Link className="navbar-item" to="/basisstufe">Angebot</Link>
-          <Link className="navbar-item" to="/philosophy">Philosophie</Link>
-          <Link className="navbar-item" to="/about">Über uns</Link>
-          <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
-              <span className="icon">
-                <img
-                  src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook"
-                  style={{
-                    filter: 'grayscale(100%)',
-                    opacity: 0.2,
-                  }}
-                />
-              </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-);
-
-
-
-
 export default ({ children, data, ...props }) => (
 
   <div>
@@ -66,11 +26,6 @@ export default ({ children, data, ...props }) => (
             minHeight: 64,
           }}
         >
-          {/*<img*/}
-            {/*className="image"*/}
-            {/*src={logo}*/}
-            {/*style={{ margin: '0 0 0 1rem'}}*/}
-          {/*/>*/}
           <a className="navbar-item" href="../">
             <h1 className="title">{data.site.siteMetadata.title}</h1>
           </a>
@@ -86,14 +41,14 @@ export default ({ children, data, ...props }) => (
         <div id="navMenuDocumentation" className="navbar-menu">
           <div className="navbar-end">
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link" href="/basisstufe">
+              <div className="navbar-link">
                 Angebot
-              </a>
+              </div>
               <div className="navbar-dropdown ">
-                <a className="navbar-item " href="/basisstufe">
+                <a className="navbar-item " href="/angebot/basisstufe">
                   Basisstufe
                 </a>
-                <a className="navbar-item " href="/primarstufe">
+                <a className="navbar-item " href="/angebot/primarstufe">
                   Primarstufe
                 </a>
               </div>
@@ -173,16 +128,3 @@ export const query = graphql`
   }
 `
 
-// carouselImages: imageSharp(id: { regex: "/carousel/" }) {
-//   sizes(
-//     duotone: { highlight: "#f00e2e", shadow: "#192550" }
-//     traceSVG: {
-//       color: "#f00e2e"
-//       turnPolicy: TURNPOLICY_MINORITY
-//       blackOnWhite: false
-//     }
-//     toFormat: PNG
-//   ) {
-//     src
-//   }
-// }

@@ -4,24 +4,25 @@ import Img from 'gatsby-image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import _ from 'lodash'
 
 
 export default ({ images }) =>
   <div style={{
     padding: '0 1.5rem',
-    overflow: 'hidden',
   }}>
     <Slider
-      dots={false}
+      dots={true}
       infinite
       speed={1000}
       slidesToShow={1}
       slidesToScroll={1}
       adaptiveHeight={false}
       autoplay={true}
-      autoplaySpeed={5000}
+      autoplaySpeed={10000}
     >
-      {images.map(({ node: { sizes }}) =>
+      {_.sortBy(images, 'node.sizes.src')
+        .map(({ node: { sizes }}) =>
         <figure
           key={sizes.src}
           className="image"

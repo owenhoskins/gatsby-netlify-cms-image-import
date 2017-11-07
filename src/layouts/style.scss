@@ -1,3 +1,4 @@
+$primaryColor: #209cee;
 
 @import url('https://fonts.googleapis.com/css?family=Fresca|Open+Sans');
 
@@ -23,27 +24,46 @@ h3 {
   font-size: 1.1rem;
   h1.title {
     font-weight: bold;
-    color: rgb(32, 156, 238);
+    color: $primaryColor;
     font-size: 2rem;
   }
   a {
-    color: rgb(32, 156, 238);
+    color: $primaryColor;
     font-weight: bold;
     //color: #3273dc;
   }
 }
 
 a {
-  color: rgb(32, 156, 238);
+  color: $primaryColor;
 }
 
 
 .hero.is-info.is-bold {
-  background-image: linear-gradient(141deg, #209cee 0%, #04a6d7 71%, #3287f5 100%);
+  background-image: linear-gradient(141deg, $primaryColor 0%, #04a6d7 71%, #3287f5 100%);
 }
 
 @media screen and (max-width: 500px) {
   .navbar-brand .navbar-item h1.title {
     font-size: 1.65rem;
+  }
+}
+
+.hero {
+  .slick-dots li {
+    button:before {
+      color: white;
+    }
+    &.slick-active button:before {
+      color: white;
+    }
+  }
+}
+
+.navbar {
+  .navbar-item div.navbar-link {
+    cursor: default;
+    font-weight: bold;
+    color: $primaryColor;
   }
 }
