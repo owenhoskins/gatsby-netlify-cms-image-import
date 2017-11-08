@@ -12,13 +12,15 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {name: name, label: Name}
+      - {name: title, label: Name}
       - {name: position, label: "Funktion and der Schule"}
-      - {name: experience, label: "Ausbildung/Berufserfahrung"}
-      - {name: bio, label: Bio, widget: text}
+      - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
+      - {name: bio, label: Bio, widget: text, required: false}
+#      - {name: photo, name: Foto, widget: "image", required: true}
       - name: children
         label: Kinder
         widget: list
+        required: false
         fields:
           - {label: Name, name: name, widget: string}
           - {label: Year, name: year, widget: string}
