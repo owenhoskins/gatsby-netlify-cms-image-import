@@ -6,6 +6,17 @@ media_folder: "/static/img"
 public_folder: "img"
 
 collections:
+  - name: "fragments" # Used in routes, e.g., /admin/collections/blog
+    label: "Fragmente" # Used in the UI
+    folder: "src/fragments" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Template", name: "templateKey", widget: "hidden", default: "fragment" }
+      - {label: "Path", name: "path", widget: "hidden"}
+
   - name: "news" # Used in routes, e.g., /admin/collections/blog
     label: "Aktuelles" # Used in the UI
     folder: "src/pages/news" # The path to the folder where the documents are stored
@@ -26,7 +37,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
       - {label: "Path", name: "path", widget: "hidden", default: "/about"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
