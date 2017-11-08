@@ -50,6 +50,8 @@ a {
 }
 
 .hero .hero-body {
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+
   .slick-dots li {
     button:before {
       color: white;
@@ -58,8 +60,14 @@ a {
       color: white;
     }
   }
+  .slick-prev {
+    left: -35px;
+  }
+  .slick-next {
+    right: -35px;
+  }
   .section {
-    padding-bottom: 0;
+    padding: 1.5rem;
   }
 }
 

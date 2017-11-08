@@ -9,7 +9,7 @@ import _ from 'lodash'
 
 export default ({ images }) =>
   <div style={{
-    padding: '0 1.5rem',
+    padding: '0 1.5rem 30px 1.5rem',
   }}>
     <Slider
       dots={true}
@@ -26,7 +26,6 @@ export default ({ images }) =>
         <figure
           key={sizes.src}
           className="image"
-          style={{ padding: '0 1rem'}}
         >
           <Img
             sizes={sizes}
