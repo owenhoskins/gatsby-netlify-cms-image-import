@@ -1,91 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
-import logo from '../img/logo-tree.svg';
-import fbIcon from '../img/fb-icon.svg';
-import 'bulma';
+import React from 'react'
+import Nav from '../components/Nav'
+import Helmet from 'react-helmet'
+import 'bulma'
 import './style.scss'
 import Carousel from '../components/Carousel'
 
 
-export default ({ children, data, ...props }) => (
+export default (
+  {
+    children,
+    data: {
+      site: { siteMetadata: { title }},
+      carouselImages,
+    },
+    ...props
+  }) => (
 
   <div>
-    <Helmet title={data.site.siteMetadata.title} />
+    <Helmet title={title} />
 
     <div className="container">
-      <nav className="navbar" style={{ marginTop: '0.75rem'}}>
-        <div
-          className="navbar-brand"
-          style={{
-            paddingLeft: 50,
-            backgroundImage: `url(${logo})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPositionX: 10,
-            minHeight: 64,
-          }}
-        >
-          <a className="navbar-item" href="../">
-            <h1 className="title">{data.site.siteMetadata.title}</h1>
-          </a>
-
-          <div className="navbar-burger burger" data-target="navMenuDocumentation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-
-        <div id="navMenuDocumentation" className="navbar-menu">
-          <div className="navbar-end">
-            <div className="navbar-item has-dropdown is-hoverable">
-              <div className="navbar-link">
-                Angebot
-              </div>
-              <div className="navbar-dropdown">
-                <Link className="navbar-item" to="/angebot/basisstufe">
-                  Basisstufe
-                </Link>
-                <Link className="navbar-item" to="/angebot/primarstufe">
-                  Primarstufe
-                </Link>
-              </div>
-            </div>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <div className="navbar-link">
-                Philosophie
-              </div>
-            </div>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <div className="navbar-link">
-                Über uns
-              </div>
-            </div>
-
-            <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
-                <span className="icon">
-                  <img
-                    src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook"
-                    style={{
-                      filter: 'grayscale(100%)',
-                      opacity: 0.2,
-                    }}
-                  />
-                </span>
-            </a>
-          </div>
-        </div>
-      </nav>
-
+      <Nav title={title} />
     </div>
 
     <section className="hero is-info is-bold">
       <div className="hero-body">
         <div className="container">
         { props.location.pathname === '/' &&
-          <Carousel images={data.carouselImages.edges}/>
+          <Carousel images={carouselImages.edges}/>
         }
         </div>
         {props.location.pathname === '/' &&
