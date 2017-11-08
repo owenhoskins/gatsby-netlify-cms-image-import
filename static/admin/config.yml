@@ -8,7 +8,7 @@ public_folder: "img"
 collections:
   - name: team
     label: Team
-    folder: "src/team"
+    folder: "src/pages/team"
     create: true
     slug: "{{slug}}"
     fields:
@@ -16,7 +16,7 @@ collections:
       - {name: position, label: "Funktion and der Schule"}
       - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
       - {name: bio, label: Bio, widget: text, required: false}
-#      - {name: photo, name: Foto, widget: "image", required: true}
+      - {name: photo, label: Foto, widget: "image"}
       - name: children
         label: Kinder
         widget: list
