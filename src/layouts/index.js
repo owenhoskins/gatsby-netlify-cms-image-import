@@ -44,24 +44,24 @@ export default ({ children, data, ...props }) => (
               <div className="navbar-link">
                 Angebot
               </div>
-              <div className="navbar-dropdown ">
-                <a className="navbar-item " href="/angebot/basisstufe">
+              <div className="navbar-dropdown">
+                <Link className="navbar-item" to="/angebot/basisstufe">
                   Basisstufe
-                </a>
-                <a className="navbar-item " href="/angebot/primarstufe">
+                </Link>
+                <Link className="navbar-item" to="/angebot/primarstufe">
                   Primarstufe
-                </a>
+                </Link>
               </div>
             </div>
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link " href="/philosophie">
+              <div className="navbar-link">
                 Philosophie
-              </a>
+              </div>
             </div>
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link " href="/about">
+              <div className="navbar-link">
                 Über uns
-              </a>
+              </div>
             </div>
 
             <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
