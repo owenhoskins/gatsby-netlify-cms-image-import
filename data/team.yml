@@ -22,7 +22,12 @@ teamMembers:
     name: Karin Escher
     photo: /img/karin.png
     position: 'Schulleitung, Begleitung im Schulalltag'
-  - experience: >-
+  - children:
+      - name: Jara
+        year: '2006'
+      - name: Kerim
+        year: '2008'
+    experience: >-
       Primarlehrerin, Tanz-und Bewegungspädagogin, Lern-und
       Entwicklungsbegleiterin, rituelle Singgruppenleiterin Weiterbildung in
       integrativer Prozessbegleitung IBP, Elternbildung in integrativer
@@ -34,3 +39,15 @@ teamMembers:
     name: Martina Kunz Guggenbühl
     photo: /img/martina-1024x575.jpg
     position: 'Schulleitung, Lernbegleiterin im Schulalltag'
+  - children:
+      - name: Jara
+        year: '2006'
+      - name: Kerim
+        year: '2008'
+    experience: >-
+      Mehrjährige Berufserfahrung als Primarlehrer auf der Unter-und
+      Mittelstufe, Elektroniker, Tontechniker, Betriebsleiter, Weiterbildung:
+      Elternbildung in integrativer Erziehung
+    name: Michael Guggenbühl
+    photo: /img/michael-2.jpg
+    position: ' Schulleitung, Lernbegleiter im Schulalltag, Technik, Infrastruktur und Umgebungspflege'
