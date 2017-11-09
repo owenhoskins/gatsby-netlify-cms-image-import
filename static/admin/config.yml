@@ -84,7 +84,7 @@ collections:
         fields:
           - name: goals
             label: Ziele
-            widget: object
+            widget: list
             fields:
               - {label: "Überschrift", name: title, widget: string}
               - {label: Beschreibung, name: description, widget: text, required: false}
@@ -96,7 +96,7 @@ collections:
         fields:
           - name: teamMembers
             label: "Team Mitglieder"
-            widget: object
+            widget: list
             fields:
               - {name: name, label: Name}
               - {name: position, label: "Funktion and der Schule"}
