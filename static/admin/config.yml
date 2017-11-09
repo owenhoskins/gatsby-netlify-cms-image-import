@@ -100,7 +100,7 @@ collections:
               - {name: name, label: Name}
               - {name: position, label: "Funktion and der Schule"}
               - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
-              - {name: photo, label: Foto, widget: image, required: false}
+              - {name: photo, label: Foto, widget: image, required: false, class: "team-member" }
               - name: children
                 label: Kinder
                 widget: list
@@ -108,7 +108,6 @@ collections:
                 fields:
                   - {label: Name, name: name, widget: string}
                   - {label: Year, name: year, widget: string}
-              - {name: order, label: Platz, widget: number, required: false}
               - {name: bio, label: Bio, widget: "text", required: false}
 
 
