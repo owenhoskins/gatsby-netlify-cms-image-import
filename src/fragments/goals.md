@@ -1,7 +1,7 @@
 ---
 path: "/goals"
 title: Unsere Ziele
-templateKey: fragment
+dataKind: fragment
 ---
 <h4>Das Kind ganzheitlich wahrnehmen</h4>
 Wir schaffen einen Ort, an dem sich Kinder zuhause fühlen und an dem sie ihr Potential entfalten kann. Wir möchten Kinder in ihrer Ganzheit wahrzunehmen und den verschiedenen Wesen mit Respekt und Gleichheit zu begegnen. Wir achten die Kreativität und die Besonderheit jedes Individuums. Wir geben den Kindern Zeit, sich selber und die eigenen Bedürfnisse kennenzulernen

@@ -12,11 +12,11 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {name: title, label: Name}
+      - {name: dataKind, widget: hidden, default: "team-member"}
+      - {name: name, label: Name}
       - {name: position, label: "Funktion and der Schule"}
       - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
-      - {name: bio, label: Bio, widget: text, required: false}
-      - {name: photo, label: Foto, widget: "image"}
+      - {name: photo, label: Foto, widget: image}
       - name: children
         label: Kinder
         widget: list
@@ -24,18 +24,19 @@ collections:
         fields:
           - {label: Name, name: name, widget: string}
           - {label: Year, name: year, widget: string}
+      - {name: bio, label: Bio, widget: markdown, required: false}
       - {name: order, label: Platz, widget: number, required: false}
 
 
-  - name: "fragments" # Used in routes, e.g., /admin/collections/blog
-    label: "Fragmente" # Used in the UI
-    folder: "src/fragments" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Template", name: "templateKey", widget: "hidden", default: "fragment" }
+  - name: "fragments"
+    label: "Fragmente"
+    folder: "src/fragments"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {name: dataKind, widget: hidden, default: "fragment"}
+      - {label: "Titel", name: "title", widget: "string", required: false}
+      - {label: "Text", name: "body", widget: "markdown"}
       - {label: "Path", name: "path", widget: "hidden"}
 
   - name: "news" # Used in routes, e.g., /admin/collections/blog
@@ -44,22 +45,24 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+      - {name: kind, widget: hidden, default: "news"}
       - {label: "Layout", name: "layout", widget: "hidden", default: "news"}
-      - {label: "Path", name: "path", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Pfad", name: "path", widget: "string"}
+      - {label: "Titel", name: "title", widget: "string"}
       #- {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Datum", name: "date", widget: "datetime"}
+      - {label: "Pin", name: "pin", widget: "boolean"}
+      - {label: "Text", name: "body", widget: "markdown"}
       - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
 
-  - name: "about" # Used in routes, e.g., /admin/collections/blog
-    label: "Über uns" # Used in the UI
-    folder: "src/pages/about" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-      - {label: "Path", name: "path", widget: "hidden", default: "/about"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Template", name: "templateKey", widget: "hidden", default: "page" }
+#  - name: "about" # Used in routes, e.g., /admin/collections/blog
+#    label: "Über uns" # Used in the UI
+#    folder: "src/pages/about" # The path to the folder where the documents are stored
+#    create: true # Allow users to create new documents in this collection
+#    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+#    fields: # The fields for each document, usually in front matter
+#      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+#      - {label: "Path", name: "path", widget: "hidden", default: "/about"}
+#      - {label: "Title", name: "title", widget: "string"}
+#      - {label: "Body", name: "body", widget: "markdown"}
+#      - {label: "Template", name: "templateKey", widget: "hidden", default: "page" }

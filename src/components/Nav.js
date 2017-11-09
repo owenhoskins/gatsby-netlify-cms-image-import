@@ -76,6 +76,11 @@ export default class Nav extends PureComponent {
             <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link">
                 Über uns
+                <div className="navbar-dropdown">
+                  <Link className="navbar-item" to="/team">
+                    Team
+                  </Link>
+                </div>
               </div>
             </div>
 

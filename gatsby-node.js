@@ -5,13 +5,17 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }, 
+        filter: { frontmatter: { dataKind: { eq:null} }}
+      ) {
         edges {
           node {
             excerpt(pruneLength: 400)
             html
             id
             frontmatter {
+              dataKind
               templateKey
               path
               date

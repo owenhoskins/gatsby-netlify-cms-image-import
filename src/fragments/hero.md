@@ -1,7 +1,7 @@
 ---
-title: Kindgerecht und familienfreundlich
-templateKey: fragment
 path: /hero
+title: Kindgerecht und familienfreundlich
+dataKind: fragment
 ---
 Wir begleiten das Kind auf seinem persönlichen Lern- und Lebensweg. Wir lernen mit allen Sinnen und aus dem Leben.
 Selbstbestimmtes (freies) Lernen sowie freies Spiel ermöglichen es den Kindern, ihr Potential zu
