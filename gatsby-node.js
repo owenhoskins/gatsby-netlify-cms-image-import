@@ -1,4 +1,5 @@
 const path = require('path');
+const _ = require('lodash');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
@@ -31,7 +32,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: node.frontmatter.path || `/${_.kebabCase(node.frontmatter.title)}`,
         component: path.resolve(`src/templates/${String(node.frontmatter.templateKey)}.js`),
         context: {} // additional data can be passed via context
       });
