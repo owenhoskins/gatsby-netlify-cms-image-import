@@ -1,5 +1,5 @@
 ---
-title: Michael Guggenbühl
+name: Michael Guggenbühl
 dataKind: team-member
 position: >-
   Schulleitung, Lernbegleiter im Schulalltag, Technik, Infrastruktur und
