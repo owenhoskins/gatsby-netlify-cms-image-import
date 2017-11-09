@@ -17,4 +17,6 @@ Markdown pages intended to keep data only should have a field `dataKind`:
 
     - {name: dataKind, widget: hidden, default: "team-member"}
     
-Pages for them will not be generated.    
+Pages for them will not be generated.
+
+Also they need to have a field named `body` for the markdown.    

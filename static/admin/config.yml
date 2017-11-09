@@ -58,7 +58,7 @@ collections:
 
 
   - name: "settings"
-    label: "Settings"
+    label: "Einstellungen"
     delete: false # Prevent users from deleting documents in this collection
     editor:
       preview: false
@@ -71,23 +71,46 @@ collections:
           - {label: "Global title", name: "site_title", widget: "string"}
           - label: "Post Settings"
             name: posts
-            widget: "object"
+            widget: object
             fields:
               - {label: "Number of posts on frontpage", name: front_limit, widget: number}
               - {label: "Default Author", name: author, widget: string}
               - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
 
+      - name: "goals"
+        label: Ziele
+        file: "data/goals.json"
+        description: "Ziele"
+        fields:
+          - name: goals
+            label: Ziele
+            widget: object
+            fields:
+              - {label: "Überschrift", name: title, widget: string}
+              - {label: Beschreibung, name: description, widget: text, required: false}
+
       - name: "team-members"
-        label: "Team members"
-        file: "data/team-members.yml"
+        label: "Team Mitglieder"
+        file: "data/team-members.json"
         description: "Team members"
         fields:
           - name: teamMembers
-            label: "Team members"
-            widget: list
+            label: "Team Mitglieder"
+            widget: object
             fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Stelle", name: "position", widget: "string"}
+              - {name: name, label: Name}
+              - {name: position, label: "Funktion and der Schule"}
+              - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
+              - {name: photo, label: Foto, widget: image, required: false}
+              - name: children
+                label: Kinder
+                widget: list
+                required: false
+                fields:
+                  - {label: Name, name: name, widget: string}
+                  - {label: Year, name: year, widget: string}
+              - {name: order, label: Platz, widget: number, required: false}
+              - {name: bio, label: Bio, widget: "text", required: false}
 
 
 #  - name: "about" # Used in routes, e.g., /admin/collections/blog
