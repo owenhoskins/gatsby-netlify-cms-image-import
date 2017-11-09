@@ -63,12 +63,13 @@ collections:
     editor:
       preview: false
     files:
-      - name: "general"
-        label: "Einstellungen"
-        file: "data/settings.json"
+      - name: "metadata"
+        label: "Globale Einstellungen"
+        file: "data/site-metadata.yml"
         description: "Globale Einstellungen"
         fields:
-          - {label: "Global title", name: siteTitle, widget: "string"}
+          - {label: "Name der Webseite", name: title, widget: "string"}
+          - {label: "Google Analytics UA-Code", name: trackingId, widget: "string"}
           - label: "Aktuelles"
             name: news
             widget: object

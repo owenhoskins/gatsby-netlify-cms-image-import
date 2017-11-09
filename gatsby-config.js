@@ -3,12 +3,15 @@ const fs = require('fs')
 const loadYaml = (fname) =>
   yaml.safeLoad(fs.readFileSync(fname, 'utf8'))
 
-const goals = loadYaml('./data/goals.yml')
+
+const siteMetadata = loadYaml('./data/site-metadata.yml')
+const { trackingId } = siteMetadata
 
 module.exports = {
   siteMetadata: {
-    title: `Freie Schule Bergmeilen`,
-    goals
+    ...siteMetadata,
+    goals: loadYaml('./data/goals.yml'),
+    team: loadYaml('./data/team.yml')
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -61,7 +64,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-`,
+        trackingId,
       },
     },
 
