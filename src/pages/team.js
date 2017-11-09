@@ -56,7 +56,7 @@ export const pageQuery = graphql`
 
     teamMembers: allMarkdownRemark(
       filter: {frontmatter: {dataKind: {eq: "team-member"}}},
-      sort: {order: DESC, fields: [frontmatter___order]} 
+      sort: {order: ASC, fields: [frontmatter___order]} 
     ) {
       edges {
         node {
