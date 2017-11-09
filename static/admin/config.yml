@@ -53,8 +53,8 @@ collections:
         fields:
           - {label: Name, name: name, widget: string}
           - {label: Year, name: year, widget: string}
-      - {name: bio, label: Bio, widget: markdown, required: false}
       - {name: order, label: Platz, widget: number, required: false}
+      - {name: body, label: Bio, widget: "text", required: false}
 
 
 
