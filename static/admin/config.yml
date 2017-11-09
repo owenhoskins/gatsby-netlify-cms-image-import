@@ -7,38 +7,6 @@ media_folder: "/static/img"
 public_folder: "img"
 
 collections:
-  - name: team
-    label: Team
-    folder: "src/pages/team"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {name: dataKind, widget: hidden, default: "team-member"}
-      - {name: title, label: Name}
-      - {name: position, label: "Funktion and der Schule"}
-      - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
-      - {name: photo, label: Foto, widget: image}
-      - name: children
-        label: Kinder
-        widget: list
-        required: false
-        fields:
-          - {label: Name, name: name, widget: string}
-          - {label: Year, name: year, widget: string}
-      - {name: bio, label: Bio, widget: markdown, required: false}
-      - {name: order, label: Platz, widget: number, required: false}
-
-
-  - name: "fragments"
-    label: "Fragmente"
-    folder: "src/fragments"
-    create: false
-    slug: "{{slug}}"
-    fields:
-      - {name: dataKind, widget: hidden, default: "fragment"}
-      - {label: "Titel", name: "title", widget: "string", required: false}
-      - {label: "Text", name: "body", widget: "markdown"}
-      - {label: "Path", name: "path", widget: "hidden"}
 
   - name: "news" # Used in routes, e.g., /admin/collections/blog
     label: "Aktuelles" # Used in the UI
@@ -55,6 +23,40 @@ collections:
       - {label: "Pin", name: "pin", widget: "boolean"}
       - {label: "Text", name: "body", widget: "markdown"}
       - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
+
+  - name: "fragments"
+    label: "Fragmente"
+    folder: "src/fragments"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {name: dataKind, widget: hidden, default: "fragment"}
+      - {label: "Titel", name: "title", widget: "string", required: false}
+      - {label: "Text", name: "body", widget: "markdown"}
+      - {label: "Path", name: "path", widget: "hidden"}
+
+  - name: team
+    label: Team
+    folder: "src/pages/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: dataKind, widget: hidden, default: "team-member"}
+      - {name: title, label: Name}
+      - {name: position, label: "Funktion and der Schule"}
+      - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
+      - {name: photo, label: Foto, widget: image, required: false}
+      - name: children
+        label: Kinder
+        widget: list
+        required: false
+        fields:
+          - {label: Name, name: name, widget: string}
+          - {label: Year, name: year, widget: string}
+      - {name: bio, label: Bio, widget: markdown, required: false}
+      - {name: order, label: Platz, widget: number, required: false}
+
+
 
 #  - name: "about" # Used in routes, e.g., /admin/collections/blog
 #    label: "Über uns" # Used in the UI
