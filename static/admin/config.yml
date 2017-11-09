@@ -58,28 +58,26 @@ collections:
 
 
   - name: "settings"
-    label: "Einstellungen"
-    delete: false # Prevent users from deleting documents in this collection
+    label: "Sonstiges"
+    delete: false
     editor:
       preview: false
     files:
       - name: "general"
-        label: "Site Settings"
+        label: "Einstellungen"
         file: "data/settings.json"
-        description: "General Site Settings"
+        description: "Globale Einstellungen"
         fields:
-          - {label: "Global title", name: "site_title", widget: "string"}
-          - label: "Post Settings"
-            name: posts
+          - {label: "Global title", name: siteTitle, widget: "string"}
+          - label: "Aktuelles"
+            name: news
             widget: object
             fields:
-              - {label: "Number of posts on frontpage", name: front_limit, widget: number}
-              - {label: "Default Author", name: author, widget: string}
-              - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
+              - {label: "Anzahl News auf Homeseite", name: newsLimit, widget: number}
 
       - name: "goals"
         label: Ziele
-        file: "data/goals.json"
+        file: "data/goals.yml"
         description: "Ziele"
         fields:
           - name: goals
@@ -91,7 +89,7 @@ collections:
 
       - name: "team-members"
         label: "Team Mitglieder"
-        file: "data/team-members.json"
+        file: "data/team-members.yml"
         description: "Team members"
         fields:
           - name: teamMembers
