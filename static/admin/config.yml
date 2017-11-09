@@ -88,11 +88,13 @@ collections:
               - {label: "Überschrift", name: title, widget: string}
               - {label: Beschreibung, name: description, widget: text, required: false}
 
-      - name: "team-members"
-        label: "Team Mitglieder"
-        file: "data/team-members.yml"
-        description: "Team members"
+      - name: "team"
+        label: "Team"
+        file: "data/team.yml"
+        description: "Team"
         fields:
+          - {label: "Überschrift", name: title, widget: "string"}
+          - {label: "Intro", name: "intro", widget: "markdown"}
           - name: teamMembers
             label: "Team Mitglieder"
             widget: list
