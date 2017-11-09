@@ -57,6 +57,38 @@ collections:
       - {name: body, label: Bio, widget: "text", required: false}
 
 
+  - name: "settings"
+    label: "Settings"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Site Settings"
+        file: "data/settings.json"
+        description: "General Site Settings"
+        fields:
+          - {label: "Global title", name: "site_title", widget: "string"}
+          - label: "Post Settings"
+            name: posts
+            widget: "object"
+            fields:
+              - {label: "Number of posts on frontpage", name: front_limit, widget: number}
+              - {label: "Default Author", name: author, widget: string}
+              - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
+
+      - name: "team-members"
+        label: "Team members"
+        file: "data/team-members.yml"
+        description: "Team members"
+        fields:
+          - name: teamMembers
+            label: "Team members"
+            widget: list
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Stelle", name: "position", widget: "string"}
+
 
 #  - name: "about" # Used in routes, e.g., /admin/collections/blog
 #    label: "Über uns" # Used in the UI
