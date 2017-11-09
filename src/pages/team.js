@@ -1,11 +1,71 @@
 import React from 'react'
+import _ from 'lodash'
+
+
+const TeamMember = ({
+  name,
+  photo,
+  position,
+  experience,
+  children
+}) =>
+  <div
+    key={name}
+    className="box"
+  >
+    <article className="media">
+      <div className="media-left">
+        <figure className=" is-2by3">
+          <img
+            src={photo}
+            alt={name}
+            style={{ maxHeight: 300, marginRight: 40 }}
+          />
+        </figure>
+      </div>
+      <div className="media-content">
+        <div className="content">
+          <div className="media-content">
+            <h2 className="title is-3">{name}</h2>
+            <p>
+              <h3 className="subtitle is-5">Funktion an der Schule</h3>
+              { position }
+            </p>
+            <br/>
+            <p>
+              <h3 className="subtitle is-5">Ausbildung/Berufserfahrung</h3>
+              { experience }
+            </p>
+            <br/>
+            {!_.isEmpty(children) &&
+              <div>
+                <h3 className="subtitle is-5">Kinder</h3>
+              <ul>
+                {
+                  children.map(({ name, year }) =>
+                   <li>{ name }, { year }</li>
+                  )
+                }
+              </ul>
+              </div>
+            }
+            { /* bio */ }
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
 
 
 export default (
   {
     data: {
-      teamMembers: {
-        edges: members
+      site: {
+        siteMetadata: {
+          team: {
+            teamMembers
+          }
+        }
       }
     }
   }
@@ -13,39 +73,7 @@ export default (
   <section className="section">
     <div className="columns">
       <div className="column">
-        {members.map((
-          { node: {
-            id,
-            frontmatter: {
-              name,
-              position
-            }
-          }}) =>
-            <div
-              key={id}
-              className="box"
-            >
-              <article className="media">
-                <div className="media-left">
-                  <figure className="image is-128x128">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image" />
-                  </figure>
-                </div>
-                <div className="media-content">
-                  <div className="content">
-                    <div className="media-content">
-                      <h2 className="title is-4">{name}</h2>
-                      <h3 className="subtitle is-6">{position}</h3>
-                      { /* bio */ }
-                    </div>
-                  </div>
-
-                  <div className="content">
-                  </div>
-                </div>
-              </article>
-            </div>
-        )}
+        {teamMembers.map(member => <TeamMember {...member} />)}
       </div>
     </div>
   </section>
@@ -54,16 +82,18 @@ export default (
 export const pageQuery = graphql`
   query TeamQuery {
 
-    teamMembers: allMarkdownRemark(
-      filter: {frontmatter: {dataKind: {eq: "team-member"}}},
-      sort: {order: ASC, fields: [frontmatter___order]} 
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
+    site {
+      siteMetadata {
+        team {
+          teamMembers {
+            experience
             name
+            photo
             position
+            children {
+              name
+              year
+            }
           }
         }
       }

@@ -95,14 +95,14 @@ collections:
         description: "Team"
         fields:
           - {label: "Überschrift", name: title, widget: "string"}
-          - {label: "Intro", name: "intro", widget: "markdown"}
+          - {label: "Intro", name: "intro", widget: "markdown", required: false}
           - name: teamMembers
             label: "Team Mitglieder"
             widget: list
             fields:
               - {name: name, label: Name}
               - {name: position, label: "Funktion and der Schule"}
-              - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
+              - {name: experience, label: "Ausbildung/Berufserfahrung", widget: text, required: false}
               - {name: photo, label: Foto, widget: image, required: false, class: "team-member" }
               - name: children
                 label: Kinder
@@ -111,7 +111,6 @@ collections:
                 fields:
                   - {label: Name, name: name, widget: string}
                   - {label: Year, name: year, widget: string}
-              - {name: bio, label: Bio, widget: "text", required: false}
 
 
 #  - name: "about" # Used in routes, e.g., /admin/collections/blog
