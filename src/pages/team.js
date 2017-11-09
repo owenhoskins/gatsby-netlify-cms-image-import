@@ -10,32 +10,30 @@ const TeamMember = ({
   children
 }) =>
   <div
-    key={name}
     className="box"
   >
-    <article className="media">
-      <div className="media-left">
+    <article className="columns">
+      <div className="column is-one-quarter">
         <figure className=" is-2by3">
           <img
             src={photo}
             alt={name}
-            style={{ maxHeight: 300, marginRight: 40 }}
+            style={{ maxWidth: 200, maxHeight: 300, paddingRight: 30 }}
           />
         </figure>
       </div>
-      <div className="media-content">
+      <div className="column">
         <div className="content">
-          <div className="media-content">
             <h2 className="title is-3">{name}</h2>
-            <p>
+            <div>
               <h3 className="subtitle is-5">Funktion an der Schule</h3>
               { position }
-            </p>
+            </div>
             <br/>
-            <p>
+            <div>
               <h3 className="subtitle is-5">Ausbildung/Berufserfahrung</h3>
               { experience }
-            </p>
+            </div>
             <br/>
             {!_.isEmpty(children) &&
               <div>
@@ -43,14 +41,13 @@ const TeamMember = ({
               <ul>
                 {
                   children.map(({ name, year }) =>
-                   <li>{ name }, { year }</li>
+                   <li key={name}>{ name }, { year }</li>
                   )
                 }
               </ul>
               </div>
             }
             { /* bio */ }
-          </div>
         </div>
       </div>
     </article>
@@ -73,7 +70,7 @@ export default (
   <section className="section">
     <div className="columns">
       <div className="column">
-        {teamMembers.map(member => <TeamMember {...member} />)}
+        {teamMembers.map((member, i) => <TeamMember key={i} {...member} />)}
       </div>
     </div>
   </section>
