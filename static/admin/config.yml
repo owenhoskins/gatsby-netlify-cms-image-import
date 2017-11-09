@@ -13,7 +13,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: dataKind, widget: hidden, default: "team-member"}
-      - {name: name, label: Name}
+      - {name: title, label: Name}
       - {name: position, label: "Funktion and der Schule"}
       - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
       - {name: photo, label: Foto, widget: image}
