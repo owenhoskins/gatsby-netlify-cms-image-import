@@ -1,3 +1,5 @@
+title: Team
+intro: Die Mitglieder des Schulleitungs-Teams stellen sich vor
 teamMembers:
   - children:
       - name: Navin
@@ -7,4 +9,15 @@ teamMembers:
       Jugendlichen mit herausforderndem Verhalten
     name: Irene Pfenninger
     photo: /img/irene-e1448835722886.jpg
+    position: 'Schulleitung, Begleitung im Schulalltag'
+  - children:
+      - name: Jael
+        year: '2012'
+      - name: Louis
+        year: '2015'
+    experience: >-
+      Spielgruppenleiterin Zertifikat SSLV, Drogistin HF Mehrjährige Erfahrung
+      im praxisnahen Unterrichten von Berufsschülern (Überbetriebliche Kurse
+      Drogisten)
+    name: Karin Escher
     position: 'Schulleitung, Begleitung im Schulalltag'
