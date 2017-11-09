@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 import Link from 'gatsby-link';
-import logo from '../img/logo-tree.svg';
+import logo from '../img/logo.svg';
 import fbIcon from '../img/fb-icon.svg';
+import './nav.scss'
 
 export default class Nav extends PureComponent {
 
@@ -12,6 +13,12 @@ export default class Nav extends PureComponent {
   handleToggleBurger = () => {
     this.setState({
       isBurgerActive: !this.state.isBurgerActive
+    })
+  }
+
+  handleLinkClick = () => {
+    this.setState({
+      isBurgerActive: false
     })
   }
 
@@ -60,10 +67,18 @@ export default class Nav extends PureComponent {
                 Angebot
               </div>
               <div className="navbar-dropdown">
-                <Link className="navbar-item" to="/angebot/basisstufe">
+                <Link
+                  className="navbar-item"
+                  to="/angebot/basisstufe"
+                  onClick={this.handleLinkClick}
+                >
                   Basisstufe
                 </Link>
-                <Link className="navbar-item" to="/angebot/primarstufe">
+                <Link
+                  className="navbar-item"
+                  to="/angebot/primarstufe"
+                  onClick={this.handleLinkClick}
+                >
                   Primarstufe
                 </Link>
               </div>
@@ -76,24 +91,28 @@ export default class Nav extends PureComponent {
             <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link">
                 Über uns
-                <div className="navbar-dropdown">
-                  <Link className="navbar-item" to="/team">
-                    Team
-                  </Link>
-                </div>
+              </div>
+              <div className="navbar-dropdown">
+                <Link
+                  className="navbar-item"
+                  to="/team"
+                  onClick={this.handleLinkClick}
+                >
+                  Team
+                </Link>
               </div>
             </div>
 
             <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
-                    <span className="icon">
-                      <img
-                        src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook"
-                        style={{
-                          filter: 'grayscale(100%)',
-                          opacity: 0.2,
-                        }}
-                      />
-                    </span>
+              <span className="icon">
+                <img
+                  src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook"
+                  style={{
+                    filter: 'grayscale(100%)',
+                    opacity: 0.2,
+                  }}
+                />
+              </span>
             </a>
           </div>
         </div>

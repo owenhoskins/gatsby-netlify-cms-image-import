@@ -1,0 +1,21 @@
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    border-top: 2px solid #209cee;
+
+    &.is-active {
+      text-align: center;
+    }
+    .navbar-link {
+      padding-right: 1rem;
+      font-size: 1.4rem;
+    }
+    div.navbar-link:hover {
+      background-color: transparent;
+    }
+    .navbar-dropdown {
+      font-size: 0.975rem;
+      padding-bottom: 1.0rem;
+      padding-top: 0rem;
+    }
+  }
+}
