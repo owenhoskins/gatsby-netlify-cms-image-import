@@ -40,22 +40,37 @@ const NewsColumn = ({ newsRemarks, numItemsToShow }) => {
   )
 }
 
+
+const Goals = ({ title, goals }) =>
+  <div>
+    <h2 className="title">{title}</h2>
+    <div className="content">
+      {
+        goals.map(({ title, description }) =>
+          <div>
+            <h4>{ title }</h4>
+            { description }<br/><br/>
+          </div>
+        )
+      }
+    </div>
+  </div>
+
 export default (
   {
-    data
+    data: {
+      newsRemarks,
+      site: { siteMetadata: { goals } }
+    }
   }) =>
   <section className="section">
     <div className="columns">
       <div className="column">
-        <h2 className="title">{data.goalsRemark.frontmatter.title}</h2>
-        <div
-          className="content"
-          dangerouslySetInnerHTML={{ __html: data.goalsRemark.html }}
-        />
+        <Goals {...goals} />
       </div>
 
       <NewsColumn
-        newsRemarks={data.newsRemarks}
+        newsRemarks={newsRemarks}
         numItemsToShow={3}
       />
     </div>
@@ -83,10 +98,16 @@ export const pageQuery = graphql`
         }
       }
     }
-    goalsRemark: markdownRemark(frontmatter: { path: { eq: "/goals" } }) {
-      html
-      frontmatter {
-        title
+
+    site {
+      siteMetadata {
+        goals {
+          title
+          goals {
+            description
+            title
+          }
+        }
       }
     }
   }

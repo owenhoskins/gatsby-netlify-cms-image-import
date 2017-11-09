@@ -80,6 +80,7 @@ collections:
         file: "data/goals.yml"
         description: "Ziele"
         fields:
+          - {label: "Überschrift", name: title, widget: "string"}
           - name: goals
             label: Ziele
             widget: list

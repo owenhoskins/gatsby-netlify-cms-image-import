@@ -1,6 +1,14 @@
+const yaml = require('js-yaml')
+const fs = require('fs')
+const loadYaml = (fname) =>
+  yaml.safeLoad(fs.readFileSync(fname, 'utf8'))
+
+const goals = loadYaml('./data/goals.yml')
+
 module.exports = {
   siteMetadata: {
-    title: `Freie Schule Bergmeilen`
+    title: `Freie Schule Bergmeilen`,
+    goals
   },
   plugins: [
     'gatsby-plugin-react-helmet',
