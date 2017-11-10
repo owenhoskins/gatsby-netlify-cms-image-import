@@ -1,8 +1,8 @@
 ---
 layout: about
-path: /angebot/basisstufe
+path: /angebot/kindergarten
 templateKey: 'page'
-title: Basisstufe
+title: Kindergarten
 ---
 
 Wir bieten Plätze für 12 Kindergartenkinder an. Der Kindergarten kann in zwei oder drei Jahren absolviert werden. Ein langsamer Einstieg in die Kindergartenwoche ist nach Absprache mit der Schulleitung möglich.
