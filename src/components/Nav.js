@@ -25,6 +25,12 @@ export default class Nav extends PureComponent {
   render() {
     const { isBurgerActive } = this.state
     const { title } = this.props
+
+    const NavLink = ({ to, text }) =>
+      <Link className="navbar-item" to={to} onClick={this.handleLinkClick}>
+        {text}
+      </Link>
+
     return (
       <nav className="navbar" style={{ marginTop: '0.75rem'}}>
         <div
@@ -67,20 +73,8 @@ export default class Nav extends PureComponent {
                 Angebot
               </div>
               <div className="navbar-dropdown">
-                <Link
-                  className="navbar-item"
-                  to="/angebot/basisstufe"
-                  onClick={this.handleLinkClick}
-                >
-                  Basisstufe
-                </Link>
-                <Link
-                  className="navbar-item"
-                  to="/angebot/primarstufe"
-                  onClick={this.handleLinkClick}
-                >
-                  Primarstufe
-                </Link>
+                <NavLink to="/angebot/kindergarten" text="Kindergarten" />
+                <NavLink to="/angebot/primarstufe" text="Primarstufe" />
               </div>
             </div>
             <div className="navbar-item has-dropdown is-hoverable">
@@ -93,6 +87,7 @@ export default class Nav extends PureComponent {
                 Über uns
               </div>
               <div className="navbar-dropdown">
+                <NavLink to="/team" text="Kindergarten" />
                 <Link
                   className="navbar-item"
                   to="/team"
