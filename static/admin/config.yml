@@ -17,7 +17,7 @@ collections:
       - {name: kind, widget: hidden, default: "page"}
       - {label: "Pfad", name: "path", widget: "string"}
       - {label: "Titel", name: "title", widget: "string"}
-      - {name: section, widget: relation, collection: sections, valueField: title}
+      - {name: section, widget: relation, collection: "settings.sections", valueField: title}
       - {label: "Text", name: "body", widget: "markdown"}
 
   - name: "news" # Used in routes, e.g., /admin/collections/blog
@@ -48,19 +48,19 @@ collections:
       - {label: "Path", name: "path", widget: "hidden"}
 
 
-  - name: sections
-    file: "data/sections.yml"
-    label: Sektionen
-    fields:
-      - {label: "Titel", name: title, widget: string}
-
-
   - name: "settings"
     label: "Sonstiges"
     delete: false
     editor:
       preview: false
     files:
+      - name: sections
+        file: "data/sections.yml"
+        label: Sektionen
+        widget: list
+        fields:
+          - {label: "Titel", name: title, widget: string}
+
       - name: "metadata"
         label: "Globale Einstellungen"
         file: "data/site-metadata.yml"
