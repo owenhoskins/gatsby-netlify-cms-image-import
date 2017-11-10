@@ -35,27 +35,6 @@ collections:
       - {label: "Text", name: "body", widget: "markdown"}
       - {label: "Path", name: "path", widget: "hidden"}
 
-  - name: team
-    label: Team
-    folder: "src/pages/team"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {name: dataKind, widget: hidden, default: "team-member"}
-      - {name: name, label: Name}
-      - {name: position, label: "Funktion and der Schule"}
-      - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
-      - {name: photo, label: Foto, widget: image, required: false}
-      - name: children
-        label: Kinder
-        widget: list
-        required: false
-        fields:
-          - {label: Name, name: name, widget: string}
-          - {label: Year, name: year, widget: string}
-      - {name: order, label: Platz, widget: number, required: false}
-      - {name: body, label: Bio, widget: "text", required: false}
-
 
   - name: "settings"
     label: "Sonstiges"
