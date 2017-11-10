@@ -48,19 +48,19 @@ collections:
       - {label: "Path", name: "path", widget: "hidden"}
 
 
+  - name: sections
+    file: "data/sections.yml"
+    label: Sektionen
+    fields:
+      - {label: "Titel", name: title, widget: string}
+
+
   - name: "settings"
     label: "Sonstiges"
     delete: false
     editor:
       preview: false
     files:
-      - name: sections
-        file: "data/sections.yml"
-        label: Sektionen
-        widget: list
-        fields:
-          - {label: "Titel", name: title, widget: string}
-
       - name: "metadata"
         label: "Globale Einstellungen"
         file: "data/site-metadata.yml"
