@@ -55,6 +55,7 @@ collections:
       preview: false
     files:
       - name: sections
+        file: "data/sections.yml"
         label: Sektionen
         widget: list
         fields:
