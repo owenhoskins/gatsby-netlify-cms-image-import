@@ -49,7 +49,7 @@ collections:
       - name: "metadata"
         label: "Globale Einstellungen"
         file: "data/site-metadata.yml"
-        description: "Globale Einstellungen"
+        description: "Einstellungen"
         fields:
           - {label: "Name der Webseite", name: title, widget: "string"}
           - {label: "Google Analytics UA-Code", name: trackingId, widget: "string"}

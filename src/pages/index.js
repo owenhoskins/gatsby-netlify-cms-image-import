@@ -60,7 +60,7 @@ export default (
   {
     data: {
       newsRemarks,
-      site: { siteMetadata: { goals } }
+      site: { siteMetadata: { goals, numNewsItems } }
     }
   }) =>
   <section className="section">
@@ -71,7 +71,7 @@ export default (
 
       <NewsColumn
         newsRemarks={newsRemarks}
-        numItemsToShow={3}
+        numItemsToShow={numNewsItems}
       />
     </div>
   </section>
@@ -101,6 +101,7 @@ export const pageQuery = graphql`
 
     site {
       siteMetadata {
+        numNewsItems
         goals {
           title
           goals {
