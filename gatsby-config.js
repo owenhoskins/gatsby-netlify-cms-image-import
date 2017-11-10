@@ -11,7 +11,8 @@ module.exports = {
   siteMetadata: {
     ...siteMetadata,
     goals: loadYaml('./data/goals.yml'),
-    team: loadYaml('./data/team.yml')
+    hero: loadYaml('./data/hero.yml'),
+    team: loadYaml('./data/team.yml'),
   },
   plugins: [
     'gatsby-plugin-react-helmet',

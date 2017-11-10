@@ -10,7 +10,7 @@ export default (
   {
     children,
     data: {
-      site: { siteMetadata: { title }},
+      site: { siteMetadata: { title, hero } },
       carouselImages,
       heroRemark,
     },
@@ -36,11 +36,8 @@ export default (
           <section className="section">
             <div className="columns">
               <div className="column">
-                <h1 className="title">{heroRemark.frontmatter.title}</h1>
-                <div
-                  className="content"
-                  dangerouslySetInnerHTML={{ __html: heroRemark.html }}
-                />
+                <h1 className="title">{hero.title}</h1>
+                <div className="content">{hero.text}</div>
               </div>
             </div>
           </section>
@@ -68,6 +65,10 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        hero {
+          title
+          text
+        }
       }
     }
 
@@ -80,14 +81,6 @@ export const query = graphql`
             }
           }
         }
-      }
-    }
-    
-    heroRemark: markdownRemark(frontmatter: { path: { eq: "/hero" } }) {
-      html
-      frontmatter {
-        title
-        path
       }
     }
   }
