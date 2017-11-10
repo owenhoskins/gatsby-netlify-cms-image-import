@@ -8,18 +8,6 @@ public_folder: "img"
 
 collections:
 
-  - name: pages
-    label: Seiten
-    folder: "src/pages/added"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {name: kind, widget: hidden, default: "page"}
-      - {label: "Pfad", name: "path", widget: "string"}
-      - {label: "Titel", name: "title", widget: "string"}
-      - {name: section, widget: relation, collection: "settings.sections", valueField: title}
-      - {label: "Text", name: "body", widget: "markdown"}
-
   - name: "news" # Used in routes, e.g., /admin/collections/blog
     label: "Aktuelles" # Used in the UI
     folder: "src/pages/news" # The path to the folder where the documents are stored
@@ -35,6 +23,22 @@ collections:
       - {label: "Pin", name: "pin", widget: "boolean"}
       - {label: "Text", name: "body", widget: "markdown"}
       - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
+
+  - name: pages
+    label: Seiten
+    folder: "src/pages/added"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: kind, widget: hidden, default: "page"}
+      - {label: "Pfad", name: "path", widget: "string"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - label: Bereich
+        name: section
+        widget: select
+        options: ["Angebot", "Philosophie", "Über uns"]
+      - {label: "Text", name: "body", widget: "markdown"}
+
 
   - name: "fragments"
     label: "Fragmente"
@@ -54,13 +58,6 @@ collections:
     editor:
       preview: false
     files:
-      - name: sections
-        file: "data/sections.yml"
-        label: Sektionen
-        widget: list
-        fields:
-          - {label: "Titel", name: title, widget: string}
-
       - name: "metadata"
         label: "Globale Einstellungen"
         file: "data/site-metadata.yml"
@@ -68,11 +65,17 @@ collections:
         fields:
           - {label: "Name der Webseite", name: title, widget: "string"}
           - {label: "Google Analytics UA-Code", name: trackingId, widget: "string"}
+          - label: "Hero"
+            name: hero
+            widget: object
+            fields:
+              - {label: "Überschrift", name: title, widget: string}
+              - {label: "Text", name: text, widget: text}
           - label: "Aktuelles"
             name: news
             widget: object
             fields:
-              - {label: "Anzahl News auf Homeseite", name: newsLimit, widget: number}
+              - {label: "Anzahl News auf Homepage", name: numNewsItems, widget: number}
 
       - name: "goals"
         label: Ziele
