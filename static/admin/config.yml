@@ -8,6 +8,18 @@ public_folder: "img"
 
 collections:
 
+  - name: pages
+    label: Seiten
+    folder: "src/pages/added"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: kind, widget: hidden, default: "page"}
+      - {label: "Pfad", name: "path", widget: "string"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {name: section, widget: relation, collection: sections, valueField: title}
+      - {label: "Text", name: "body", widget: "markdown"}
+
   - name: "news" # Used in routes, e.g., /admin/collections/blog
     label: "Aktuelles" # Used in the UI
     folder: "src/pages/news" # The path to the folder where the documents are stored
@@ -42,6 +54,12 @@ collections:
     editor:
       preview: false
     files:
+      - name: sections
+        label: Sektionen
+        widget: list
+        fields:
+          - {label: "Titel", name: title, widget: string}
+
       - name: "metadata"
         label: "Globale Einstellungen"
         file: "data/site-metadata.yml"
