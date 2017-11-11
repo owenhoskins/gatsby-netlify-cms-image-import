@@ -3,7 +3,7 @@ kind: page
 templateKey: page
 path: /kontakt
 title: Kontakt
-section: Angebot
+section: Über uns
 ---
 ## Adresse
 
