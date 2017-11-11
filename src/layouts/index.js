@@ -10,7 +10,7 @@ export default (
   {
     children,
     data: {
-      site: { siteMetadata: { title, hero } },
+      site: { siteMetadata: { title, hero, meta } },
       carouselImages,
       heroRemark,
     },
@@ -18,7 +18,11 @@ export default (
   }) => (
 
   <div>
-    <Helmet title={title} />
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={ meta.description } />
+      <meta name="keywords" content={ meta.keywords } />
+    </Helmet>
 
     <div className="container">
       <Nav title={title} />
@@ -65,6 +69,10 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        meta {
+          keywords
+          description
+        }
         hero {
           title
           text

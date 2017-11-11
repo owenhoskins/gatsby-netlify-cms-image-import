@@ -47,7 +47,7 @@ const Goals = ({ title, goals }) =>
     <div className="content">
       {
         goals.map(({ title, description }) =>
-          <div>
+          <div key={title}>
             <h4>{ title }</h4>
             { description }<br/><br/>
           </div>

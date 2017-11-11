@@ -7,8 +7,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   return graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }, 
-        filter: { frontmatter: { dataKind: { eq:null} }}
+        sort: { order: DESC, fields: [frontmatter___date] } 
       ) {
         edges {
           node {
@@ -16,7 +15,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             html
             id
             frontmatter {
-              dataKind
               templateKey
               path
               date
@@ -28,6 +26,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
   `).then(result => {
     if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors);
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -39,3 +38,27 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     });
   });
 };
+
+
+// With dataKind:
+
+// allMarkdownRemark(
+//   sort: { order: DESC, fields: [frontmatter___date] },
+//   filter: { frontmatter: { dataKind: { eq:null} }}
+// ) {
+//   edges {
+//     node {
+//       excerpt(pruneLength: 400)
+//       html
+//       id
+//       frontmatter {
+//         dataKind
+//         templateKey
+//         path
+//         date
+//         title
+//       }
+//     }
+//   }
+// }
+// }
