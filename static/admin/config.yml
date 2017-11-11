@@ -54,6 +54,19 @@ collections:
           - {label: "Name der Webseite", name: title, widget: "string"}
           - {label: "Google Analytics UA-Code", name: trackingId, widget: "string"}
           - {label: "Anzahl News auf Homepage", name: numNewsItems, widget: number}
+          - label: "Meta"
+            name: meta
+            widget: object
+            fields:
+              - label: Beschreibung
+                name: description
+                widget: text
+                required: false
+              - label: Stichwörter
+                name: keywords
+                widget: text
+                required: false
+
 
       - name: "goals"
         label: Ziele
