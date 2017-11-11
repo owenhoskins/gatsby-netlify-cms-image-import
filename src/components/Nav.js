@@ -1,10 +1,21 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link';
 import logo from '../img/logo.svg';
 import fbIcon from '../img/fb-icon.svg';
 import './nav.scss'
+import _ from 'lodash'
 
 export default class Nav extends PureComponent {
+
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    addedPages: PropTypes.arrayOf(PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      section: PropTypes.string.isRequired,
+    }))
+  }
 
   state = {
     isBurgerActive: false
@@ -22,44 +33,65 @@ export default class Nav extends PureComponent {
     })
   }
 
-  render() {
+  renderBrand() {
     const { isBurgerActive } = this.state
     const { title } = this.props
+    return (
+      <div
+        className="navbar-brand"
+        style={{
+          paddingLeft: 50,
+          backgroundImage: `url(${logo})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPositionX: 10,
+          minHeight: 64,
+        }}
+      >
+        <a className="navbar-item" href="../">
+          <h1 className="title">{title}</h1>
+        </a>
+
+        <div
+          className={
+            `navbar-burger burger
+            ${isBurgerActive && 'is-active'}`
+          }
+          onClick={this.handleToggleBurger}
+        >
+          <span/>
+          <span/>
+          <span/>
+        </div>
+      </div>
+    )
+  }
+
+  render() {
+    const { isBurgerActive } = this.state
+    const { addedPages } = this.props
+
+    const addedPagesBySection = _.groupBy(addedPages, 'section')
 
     const NavLink = ({ to, text }) =>
-      <Link className="navbar-item" to={to} onClick={this.handleLinkClick}>
+      <Link
+        activeClassName="is-active"
+        className="navbar-item"
+        to={to}
+        onClick={this.handleLinkClick}
+      >
         {text}
       </Link>
 
+    const renderAddedPages = (section) =>
+      (addedPagesBySection[section] || [])
+        .map(({ title, path }) =>
+          <NavLink key={path} to={path} text={title} />
+        )
+
+
     return (
       <nav className="navbar" style={{ marginTop: '0.75rem'}}>
-        <div
-          className="navbar-brand"
-          style={{
-            paddingLeft: 50,
-            backgroundImage: `url(${logo})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPositionX: 10,
-            minHeight: 64,
-          }}
-        >
-          <a className="navbar-item" href="../">
-            <h1 className="title">{title}</h1>
-          </a>
-
-          <div
-            className={
-              `navbar-burger burger
-              ${isBurgerActive && 'is-active'}`
-            }
-            onClick={this.handleToggleBurger}
-          >
-            <span/>
-            <span/>
-            <span/>
-          </div>
-        </div>
-
+        { this.renderBrand() }
 
         <div
           className={
@@ -73,13 +105,15 @@ export default class Nav extends PureComponent {
                 Angebot
               </div>
               <div className="navbar-dropdown">
-                <NavLink to="/angebot/kindergarten" text="Kindergarten" />
-                <NavLink to="/angebot/primarstufe" text="Primarstufe" />
+                {renderAddedPages('Angebot')}
               </div>
             </div>
             <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link">
                 Philosophie
+              </div>
+              <div className="navbar-dropdown">
+                {renderAddedPages('Philosophie')}
               </div>
             </div>
             <div className="navbar-item has-dropdown is-hoverable">
@@ -87,14 +121,8 @@ export default class Nav extends PureComponent {
                 Über uns
               </div>
               <div className="navbar-dropdown">
-                <NavLink to="/team" text="Kindergarten" />
-                <Link
-                  className="navbar-item"
-                  to="/team"
-                  onClick={this.handleLinkClick}
-                >
-                  Team
-                </Link>
+                <NavLink to="/team" text="Team"/>
+                {renderAddedPages('Über uns')}
               </div>
             </div>
 

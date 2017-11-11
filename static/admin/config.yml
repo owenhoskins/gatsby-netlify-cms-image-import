@@ -38,6 +38,7 @@ collections:
         name: section
         widget: select
         options: ["Angebot", "Philosophie", "Über uns"]
+        default: "Angebot"
       - {label: "Text", name: "body", widget: "markdown"}
 
 
