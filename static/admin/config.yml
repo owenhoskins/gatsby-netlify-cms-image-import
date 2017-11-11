@@ -15,6 +15,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {name: kind, widget: hidden, default: "news"}
+      - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
       - {label: "Layout", name: "layout", widget: "hidden", default: "news"}
       - {label: "Pfad", name: "path", widget: "string"}
       - {label: "Titel", name: "title", widget: "string"}
@@ -22,7 +23,6 @@ collections:
       - {label: "Datum", name: "date", widget: "datetime"}
       - {label: "Pin", name: "pin", widget: "boolean"}
       - {label: "Text", name: "body", widget: "markdown"}
-      - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
 
   - name: pages
     label: Seiten
@@ -31,6 +31,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: kind, widget: hidden, default: "page"}
+      - {label: "Template", name: "templateKey", widget: "hidden", default: page }
       - {label: "Pfad", name: "path", widget: "string"}
       - {label: "Titel", name: "title", widget: "string"}
       - label: Bereich
