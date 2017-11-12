@@ -49,7 +49,7 @@ module.exports = {
       }
     },
 
-    'gatsby-remark-copy-linked-files',  // for e.g. PDF inclusion
+    // 'gatsby-remark-copy-linked-files',  // for e.g. PDF inclusion
 
 
     {

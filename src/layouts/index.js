@@ -86,7 +86,7 @@ export const query = graphql`
       }
     }
     
-    addedPages: allMarkdownRemark(filter: { id: { regex: "/pages/added/"}}) {
+    addedPages: allMarkdownRemark(filter: { id: { regex: "/pages/"}}) {
       edges {
         node {
           frontmatter {
