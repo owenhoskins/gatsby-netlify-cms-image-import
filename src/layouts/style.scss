@@ -10,12 +10,12 @@ h1, h2, h3, h4 {
   font-family: 'Fresca', sans-serif;
 }
 
-
 .title {
   font-size: 1.75rem;
   color: #346;
   font-weight: normal;
 }
+
 h3 {
   font-size: 1.5rem;
 }
@@ -36,6 +36,10 @@ h3 {
 
 a {
   color: $primaryColor;
+}
+
+.container {
+  max-width: 1152px;
 }
 
 
@@ -78,4 +82,3 @@ a {
     color: $primaryColor;
   }
 }
-
