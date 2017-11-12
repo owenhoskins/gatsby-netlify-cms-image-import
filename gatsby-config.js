@@ -41,14 +41,6 @@ module.exports = {
     // generate responsive image thumbnails.
     'gatsby-transformer-sharp',
 
-    {
-      resolve: 'gatsby-remark-images',
-      options: {
-        maxWidth: 800,
-        linkImagesToOriginal: false
-      }
-    },
-
     // 'gatsby-remark-copy-linked-files',  // for e.g. PDF inclusion
 
 
