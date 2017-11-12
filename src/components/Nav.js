@@ -10,7 +10,7 @@ export default class Nav extends PureComponent {
 
   static propTypes = {
     title: PropTypes.string.isRequired,
-    addedPages: PropTypes.arrayOf(PropTypes.shape({
+    pages: PropTypes.arrayOf(PropTypes.shape({
       path: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       section: PropTypes.string.isRequired,
@@ -68,9 +68,9 @@ export default class Nav extends PureComponent {
 
   render() {
     const { isBurgerActive } = this.state
-    const { addedPages } = this.props
+    const { pages } = this.props
 
-    const addedPagesBySection = _.groupBy(addedPages, 'section')
+    const pagesBySection = _.groupBy(pages, 'section')
 
     const NavLink = ({ to, text }) =>
       <Link
@@ -83,7 +83,7 @@ export default class Nav extends PureComponent {
       </Link>
 
     const renderAddedPages = (section) =>
-      (addedPagesBySection[section] || [])
+      (pagesBySection[section] || [])
         .map(({ title, path }) =>
           <NavLink key={path} to={path} text={title} />
         )

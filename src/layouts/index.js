@@ -13,7 +13,7 @@ export default (
       site: { siteMetadata: { title, hero, meta } },
       carouselImages,
       heroRemark,
-      addedPages
+      pages
     },
     ...props
   }) => (
@@ -28,7 +28,7 @@ export default (
     <div className="container">
       <Nav
         title={title}
-        addedPages={addedPages.edges.map(
+        pages={pages.edges.map(
           ({ node: { frontmatter }}) => frontmatter
         )}
       />
@@ -86,7 +86,12 @@ export const query = graphql`
       }
     }
     
-    addedPages: allMarkdownRemark(filter: { id: { regex: "/pages/"}}) {
+    pages: allMarkdownRemark(
+      filter: { 
+        id: { regex: "/pages/"},
+        frontmatter: {kind: {eq: "page"}}
+      }
+    ) {
       edges {
         node {
           frontmatter {
