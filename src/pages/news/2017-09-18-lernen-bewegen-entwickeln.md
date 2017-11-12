@@ -1,8 +1,9 @@
 ---
+templateKey: news-item
 path: /lernen-bewegen-entwickeln
 title: 'Vortrag: Lernen - Bewegen - Entwickeln'
 date: 2017-09-18T17:12:33.962Z
-templateKey: news-item
+pin: true
 ---
 ## Lernen – Bewegen – Entwickeln mit Maja Berbier
 
@@ -28,3 +29,5 @@ _Mittwoch 15. November um 19:00 im Schulhaus_
 Interessierte Eltern sind herzlich zu einem Informationsanlass in der Schule eingeladen. Wir stellen uns vor, informieren über den Wochenablauf und beantworten Fragen zum freien Lernen und zu unserer Schule. Ein einfacher Apéro im Anschluss an den Informationsteil bietet Gelegenheit für persönliche Gespräche und Austausch.
 Wir bitten um eine Anmeldung per email fsbergmeilen@gmx.net oder per Kontaktformular mit Namen, Anzahl Erwachsene und Kinder, Datum des Anlasses.
 Kinder sind herzlich willkommen, Spielmöglichkeiten sind vorhanden.
+
+![team](/img/foto-team.jpg)
