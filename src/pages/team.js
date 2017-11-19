@@ -9,15 +9,16 @@ const TeamMember = ({
   position,
   experience,
   children
-}) =>
-  <div
+}) => {
+  const image = _.get(photo, 'childImageSharp.resolutions')
+  return <div
     className="box"
   >
     <article className="columns">
       <div className="column is-one-quarter">
-        <figure className=" is-2by3">
+        { image && <figure className=" is-2by3">
           <Img
-            resolutions={_.get(photo, 'childImageSharp.resolutions')}
+            resolutions={image}
           />
           {/*<img*/}
             {/*src={photo}*/}
@@ -25,6 +26,7 @@ const TeamMember = ({
             {/*style={{ maxWidth: 200, maxHeight: 300, paddingRight: 30 }}*/}
           {/*/>*/}
         </figure>
+        }
       </div>
       <div className="column">
         <div className="content">
@@ -56,6 +58,7 @@ const TeamMember = ({
       </div>
     </article>
   </div>
+}
 
 
 export default (
