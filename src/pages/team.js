@@ -5,11 +5,7 @@ import Img from 'gatsby-image'
 
 const TeamMember = ({
   name,
-  photo: {
-    childImageSharp: {
-      resolutions
-    }
-  },
+  photo,
   position,
   experience,
   children
@@ -21,7 +17,7 @@ const TeamMember = ({
       <div className="column is-one-quarter">
         <figure className=" is-2by3">
           <Img
-            resolutions={resolutions}
+            resolutions={_.get(photo, 'childImageSharp.resolutions')}
           />
           {/*<img*/}
             {/*src={photo}*/}
@@ -95,7 +91,7 @@ export const pageQuery = graphql`
         node {
           id
           frontmatter {
-            name
+            name: title
             photo {
               childImageSharp {
                resolutions(width: 160, height: 200, quality: 90) {

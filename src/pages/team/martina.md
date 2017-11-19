@@ -1,5 +1,5 @@
 ---
-name: Martina Kunz Guggenbühl
+title: Martina Kunz Guggenbühl
 photo: ../img/martina-1024x575.jpg
 dataKind: team-member
 position: >-

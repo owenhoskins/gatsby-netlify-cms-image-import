@@ -49,7 +49,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: dataKind, widget: hidden, default: "team-member"}
-      - {name: name, label: Name}
+      - {name: title, label: Name}
       - {name: position, label: "Funktion and der Schule"}
       - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
       - {name: photo, label: Foto, widget: image, required: false}
@@ -60,7 +60,7 @@ collections:
         fields:
           - {label: Name, name: name, widget: string}
           - {label: Year, name: year, widget: string}
-      - {name: order, label: Platz, widget: number, required: false}
+      - {name: order, label: Platz, widget: number, default: 0}
       - {name: body, widget: hidden, default: ""}
 
 #          - {name: name, label: Name}

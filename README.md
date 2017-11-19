@@ -19,4 +19,5 @@ Markdown pages intended to keep data only should have a field `dataKind`:
     
 Pages for them will not be generated.
 
-Also they need to have a field named `body` for the markdown.    
+Also they need to have a field named `body` for the markdown 
+and either `path` or `title` to be used as an identifier.    
