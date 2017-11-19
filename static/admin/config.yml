@@ -4,7 +4,7 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 
 media_folder: "/src/pages/img"
-public_folder: "img"
+public_folder: "../img"
 
 collections:
 
@@ -26,7 +26,7 @@ collections:
 
   - name: pages
     label: Seiten
-    folder: "src/pages"
+    folder: "src/pages/pages"
     create: true
     slug: "{{slug}}"
     fields:
@@ -52,7 +52,7 @@ collections:
       - {name: title, label: Name}
       - {name: position, label: "Funktion and der Schule"}
       - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
-      - {name: photo, label: Foto, widget: image, required: false}
+      - {name: photo, label: Foto, widget: image, required: false, class: "team"}
       - name: children
         label: Kinder
         widget: list
