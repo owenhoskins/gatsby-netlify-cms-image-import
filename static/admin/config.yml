@@ -61,7 +61,7 @@ collections:
           - {label: Name, name: name, widget: string}
           - {label: Year, name: year, widget: string}
       - {name: order, label: Platz, widget: number, required: false}
-      - {name: body, widget: "text", widget: hidden, default: ""}
+      - {name: body, widget: hidden, default: ""}
 
 #          - {name: name, label: Name}
 #          - {name: position, label: "Funktion and der Schule"}
