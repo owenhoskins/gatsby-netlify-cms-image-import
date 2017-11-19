@@ -1,10 +1,15 @@
 import React from 'react'
 import _ from 'lodash'
+import Img from 'gatsby-image'
 
 
 const TeamMember = ({
   name,
-  photo,
+  photo: {
+    childImageSharp: {
+      resolutions
+    }
+  },
   position,
   experience,
   children
@@ -15,11 +20,14 @@ const TeamMember = ({
     <article className="columns">
       <div className="column is-one-quarter">
         <figure className=" is-2by3">
-          <img
-            src={photo}
-            alt={name}
-            style={{ maxWidth: 200, maxHeight: 300, paddingRight: 30 }}
+          <Img
+            resolutions={resolutions}
           />
+          {/*<img*/}
+            {/*src={photo}*/}
+            {/*alt={name}*/}
+            {/*style={{ maxWidth: 200, maxHeight: 300, paddingRight: 30 }}*/}
+          {/*/>*/}
         </figure>
       </div>
       <div className="column">
@@ -57,12 +65,8 @@ const TeamMember = ({
 export default (
   {
     data: {
-      site: {
-        siteMetadata: {
-          team: {
-            teamMembers
-          }
-        }
+      teamMembers: {
+        edges: members
       }
     }
   }
@@ -70,7 +74,11 @@ export default (
   <section className="section">
     <div className="columns">
       <div className="column">
-        {teamMembers.map((member, i) => <TeamMember key={i} {...member} />)}
+        {members.map(
+          ({  node: {
+              id,
+              frontmatter
+            }}, i) => <TeamMember key={i} {...frontmatter} />)}
       </div>
     </div>
   </section>
@@ -79,14 +87,24 @@ export default (
 export const pageQuery = graphql`
   query TeamQuery {
 
-    site {
-      siteMetadata {
-        team {
-          teamMembers {
-            experience
+    teamMembers: allMarkdownRemark(
+      filter: {frontmatter: {dataKind: {eq: "team-member"}}},
+      sort: {order: ASC, fields: [frontmatter___order]} 
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
             name
-            photo
+            photo {
+              childImageSharp {
+               resolutions(width: 160, height: 200, quality: 90) {
+                 ...GatsbyImageSharpResolutions
+               }
+              }
+            }
             position
+            experience
             children {
               name
               year
@@ -95,5 +113,17 @@ export const pageQuery = graphql`
         }
       }
     }
+    
   }
 `;
+
+
+// photo {
+//   childImageSharp {
+//     responsiveSizes(maxWidth: 400) {
+//       src
+//       srcSet
+//       sizes
+//     }
+//   }
+// }

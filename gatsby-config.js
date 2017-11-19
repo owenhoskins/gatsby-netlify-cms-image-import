@@ -12,7 +12,6 @@ module.exports = {
     ...siteMetadata,
     goals: loadYaml('./data/goals.yml'),
     hero: loadYaml('./data/hero.yml'),
-    team: loadYaml('./data/team.yml'),
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -41,7 +40,6 @@ module.exports = {
     // generate responsive image thumbnails.
     'gatsby-transformer-sharp',
 
-    // 'gatsby-remark-copy-linked-files',  // for e.g. PDF inclusion
 
 
     {
@@ -54,7 +52,8 @@ module.exports = {
               maxWidth: 800,
               linkImagesToOriginal: false
             }
-          }
+          },
+         'gatsby-remark-copy-linked-files',  // for e.g. PDF inclusion
         ]
       }
     },
@@ -64,6 +63,7 @@ module.exports = {
         trackingId,
       },
     },
+
 
   ]
 };

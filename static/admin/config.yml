@@ -42,6 +42,40 @@ collections:
       - {label: "Text", name: "body", widget: "markdown"}
 
 
+  - name: team
+    label: Team
+    folder: "src/pages/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: dataKind, widget: hidden, default: "team-member"}
+      - {name: name, label: Name}
+      - {name: position, label: "Funktion and der Schule"}
+      - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
+      - {name: photo, label: Foto, widget: image, required: false}
+      - name: children
+        label: Kinder
+        widget: list
+        required: false
+        fields:
+          - {label: Name, name: name, widget: string}
+          - {label: Year, name: year, widget: string}
+      - {name: order, label: Platz, widget: number, required: false}
+      - {name: body, widget: "text", widget: hidden, default: ""}
+
+#          - {name: name, label: Name}
+#          - {name: position, label: "Funktion and der Schule"}
+#          - {name: experience, label: "Ausbildung/Berufserfahrung", widget: text, required: false}
+#          - {name: photo, label: Foto, widget: image, required: false, class: "team-member" }
+#          - name: children
+#            label: Kinder
+#            widget: list
+#            required: false
+#            fields:
+#              - {label: Name, name: name, widget: string}
+#              - {label: Year, name: year, widget: string}
+
+
   - name: "settings"
     label: "Sonstiges"
     delete: false
@@ -90,28 +124,4 @@ collections:
         fields:
           - {label: "Überschrift", name: title, widget: string}
           - {label: "Text", name: text, widget: text}
-
-
-      - name: "team"
-        label: "Team"
-        file: "data/team.yml"
-        description: "Team"
-        fields:
-          - {label: "Überschrift", name: title, widget: "string"}
-          - {label: "Intro", name: "intro", widget: "markdown", required: false}
-          - name: teamMembers
-            label: "Team Mitglieder"
-            widget: list
-            fields:
-              - {name: name, label: Name}
-              - {name: position, label: "Funktion and der Schule"}
-              - {name: experience, label: "Ausbildung/Berufserfahrung", widget: text, required: false}
-              - {name: photo, label: Foto, widget: image, required: false, class: "team-member" }
-              - name: children
-                label: Kinder
-                widget: list
-                required: false
-                fields:
-                  - {label: Name, name: name, widget: string}
-                  - {label: Year, name: year, widget: string}
 

@@ -6,7 +6,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   return graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] } 
+        sort: { order: DESC, fields: [frontmatter___date] },
+        filter: { frontmatter: { dataKind: { eq:null } }} 
       ) {
         edges {
           node {
