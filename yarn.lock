@@ -3528,6 +3528,13 @@ gatsby-module-loader@^1.0.7:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
+gatsby-plugin-glamor@^1.6.8:
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-glamor/-/gatsby-plugin-glamor-1.6.8.tgz#56dff6118095f86ce86ab6ef6935871c405d0c01"
+  dependencies:
+    babel-runtime "^6.26.0"
+    glamor "^2.20.29"
+
 gatsby-plugin-google-analytics@^1.0.11:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.12.tgz#41b63ec9c7cdf9d237a0471bca9070cf2d886b15"
@@ -3552,24 +3559,7 @@ gatsby-plugin-sass@^1.0.12:
     sass-loader "^4.1.1"
     webpack "^1.13.3"
 
-gatsby-plugin-sharp@^1.6.20:
-  version "1.6.20"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.20.tgz#5bd14a0b840485ccf71964c83832cf749827bd67"
-  dependencies:
-    async "^2.1.2"
-    babel-runtime "^6.26.0"
-    bluebird "^3.5.0"
-    image-size "^0.5.1"
-    imagemin "^5.2.2"
-    imagemin-pngquant "^5.0.0"
-    imagemin-webp "^4.0.0"
-    lodash "^4.17.4"
-    potrace "^2.1.1"
-    progress "^1.1.8"
-    sharp "^0.17.3"
-    svgo "^0.7.2"
-
-gatsby-plugin-sharp@^1.6.21:
+gatsby-plugin-sharp@^1.6.20, gatsby-plugin-sharp@^1.6.21:
   version "1.6.21"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.21.tgz#990e856153b65be28316c23ab29b4e78dd5634de"
   dependencies:
@@ -3845,7 +3835,7 @@ github-slugger@^1.1.1:
   dependencies:
     emoji-regex ">=6.0.0 <=6.1.1"
 
-glamor@^2.20.40:
+glamor@^2.20.29, glamor@^2.20.40:
   version "2.20.40"
   resolved "https://registry.yarnpkg.com/glamor/-/glamor-2.20.40.tgz#f606660357b7cf18dface731ad1a2cfa93817f05"
   dependencies:

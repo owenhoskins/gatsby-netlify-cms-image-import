@@ -8,6 +8,7 @@
     "gatsby": "^1.9.103",
     "gatsby-image": "^1.0.21",
     "gatsby-link": "^1.6.21",
+    "gatsby-plugin-glamor": "^1.6.8",
     "gatsby-plugin-google-analytics": "^1.0.11",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sass": "^1.0.12",
@@ -17,7 +18,6 @@
     "gatsby-source-filesystem": "^1.5.8",
     "gatsby-transformer-remark": "^1.7.17",
     "gatsby-transformer-sharp": "^1.6.13",
-    "glamor": "^2.20.40",
     "react-slick": "^0.15.4",
     "slick-carousel": "^1.8.1"
   },
