@@ -1,6 +1,6 @@
 ---
 title: Martina Kunz Guggenbühl
-photo: ../img/martina-1024x575.jpg
+image: ../img/martina-1024x575.jpg
 dataKind: team-member
 position: >-
   Schulleitung, Lernbegleiterin im Schulalltag

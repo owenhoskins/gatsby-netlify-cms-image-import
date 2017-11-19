@@ -5,23 +5,23 @@ import Img from 'gatsby-image'
 
 const TeamMember = ({
   name,
-  photo,
+  image,
   position,
   experience,
   children
 }) => {
-  const image = _.get(photo, 'childImageSharp.resolutions')
+  const resolutions = _.get(image, 'childImageSharp.resolutions')
   return <div
     className="box"
   >
     <article className="columns">
       <div className="column is-one-quarter">
-        { image && <figure className=" is-2by3">
+        { resolutions && <figure className=" is-2by3">
           <Img
-            resolutions={image}
+            resolutions={resolutions}
           />
           {/*<img*/}
-            {/*src={photo}*/}
+            {/*src={image}*/}
             {/*alt={name}*/}
             {/*style={{ maxWidth: 200, maxHeight: 300, paddingRight: 30 }}*/}
           {/*/>*/}
@@ -95,7 +95,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             name: title
-            photo {
+            image {
               childImageSharp {
                resolutions(width: 160, height: 200, quality: 90) {
                  ...GatsbyImageSharpResolutions
@@ -117,7 +117,7 @@ export const pageQuery = graphql`
 `;
 
 
-// photo {
+// image {
 //   childImageSharp {
 //     responsiveSizes(maxWidth: 400) {
 //       src

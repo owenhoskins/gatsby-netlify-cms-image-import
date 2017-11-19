@@ -8,7 +8,7 @@ teamMembers:
       Sozialpädagogin (HF Agogis), Langjährige Berufserfahrung Kindern und
       Jugendlichen mit herausforderndem Verhalten
     name: Irene Pfenninger
-    photo: /img/irene-e1448835722886.jpg
+    image: /img/irene-e1448835722886.jpg
     position: 'Schulleitung, Begleitung im Schulalltag'
   - children:
       - name: Jael
@@ -20,7 +20,7 @@ teamMembers:
       im praxisnahen Unterrichten von Berufsschülern (Überbetriebliche Kurse
       Drogisten)
     name: Karin Escher
-    photo: /img/karin.png
+    image: /img/karin.png
     position: 'Schulleitung, Begleitung im Schulalltag'
   - children:
       - name: Jara
@@ -32,5 +32,5 @@ teamMembers:
       Mittelstufe, Elektroniker, Tontechniker, Betriebsleiter, Weiterbildung:
       Elternbildung in integrativer Erziehung
     name: Michael Guggenbühl
-    photo: /img/michael-2.jpg
+    image: /img/michael-2.jpg
     position: ' Schulleitung, Lernbegleiter im Schulalltag, Technik, Infrastruktur und Umgebungspflege'

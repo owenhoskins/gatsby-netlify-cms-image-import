@@ -52,7 +52,7 @@ collections:
       - {name: title, label: Name}
       - {name: position, label: "Funktion and der Schule"}
       - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
-      - {name: photo, label: Foto, widget: image, required: false, class: "team"}
+      - {name: image, label: Foto, widget: image, required: false, class: "team"}
       - name: children
         label: Kinder
         widget: list
@@ -66,7 +66,7 @@ collections:
 #          - {name: name, label: Name}
 #          - {name: position, label: "Funktion and der Schule"}
 #          - {name: experience, label: "Ausbildung/Berufserfahrung", widget: text, required: false}
-#          - {name: photo, label: Foto, widget: image, required: false, class: "team-member" }
+#          - {name: image, label: Foto, widget: image, required: false, class: "team-member" }
 #          - name: children
 #            label: Kinder
 #            widget: list
