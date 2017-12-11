@@ -5,6 +5,32 @@ import logo from '../img/logo.svg';
 import fbIcon from '../img/fb-icon.svg';
 import './nav.scss'
 import _ from 'lodash'
+import { css } from 'glamor'
+
+const styles = {
+  brand: css({
+    paddingLeft: 65,
+    backgroundImage: `url(${logo})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPositionX: 10,
+    height: 64,
+    '& > .title': {
+      height: 64,
+      display: 'flex',
+      alignItems: 'center',
+    },
+    '@media screen and (max-width: 500px)': {
+      '& > h1.title': {
+        fontSize: '1.6rem !important',
+      }
+    },
+    '@media screen and (max-width: 380px)': {
+      '& > h1.title': {
+        fontSize: '1.5rem !important',
+      }
+    },
+  })
+}
 
 export default class Nav extends PureComponent {
 
@@ -39,16 +65,11 @@ export default class Nav extends PureComponent {
     return (
       <div
         className="navbar-brand"
-        style={{
-          paddingLeft: 50,
-          backgroundImage: `url(${logo})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPositionX: 10,
-          minHeight: 64,
-        }}
       >
-        <a className="navbar-item" href="../">
-          <h1 className="title">{title}</h1>
+        <a href="../">
+          <div {...styles.brand}>
+            <h1 className="title">{title}</h1>
+          </div>
         </a>
 
         <div
