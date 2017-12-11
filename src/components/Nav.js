@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link';
 import logo from '../img/logo.svg';
-import fbIcon from '../img/fb-icon.svg';
 import './nav.scss'
 import _ from 'lodash'
 import { css } from 'glamor'
@@ -57,6 +56,12 @@ export default class Nav extends PureComponent {
     this.setState({
       isBurgerActive: false
     })
+  }
+
+  handleClickAdmin = () => {
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.open()
+    }
   }
 
   renderBrand() {
@@ -147,6 +152,16 @@ export default class Nav extends PureComponent {
               </div>
             </div>
 
+            <a
+              className="navbar-item"
+              onClick={this.handleClickAdmin}
+            >
+              <span className="icon">
+                <i className="fa fa-lg fa-lock"
+                  style={{ position: 'relative', top: 1, }}
+                />
+              </span>
+            </a>
             <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
               <span className="icon">
                 <i className="fa fa-lg fa-facebook-official"/>
