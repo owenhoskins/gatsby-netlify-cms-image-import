@@ -149,13 +149,7 @@ export default class Nav extends PureComponent {
 
             <a className="navbar-item" href="https://www.facebook.com/Freie-Schule-Bergmeilen-502505593264330/" target="_blank">
               <span className="icon">
-                <img
-                  src={fbIcon} alt="Freie Schule Bergmeilen auf Facebook"
-                  style={{
-                    filter: 'grayscale(100%)',
-                    opacity: 0.2,
-                  }}
-                />
+                <i className="fa fa-lg fa-facebook-official"/>
               </span>
             </a>
           </div>
