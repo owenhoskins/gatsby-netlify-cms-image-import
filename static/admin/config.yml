@@ -40,6 +40,7 @@ collections:
         options: ["Angebot", "Philosophie", "Über uns"]
         default: "Angebot"
       - {label: "Text", name: "body", widget: "markdown"}
+      - {name: order, label: Position, widget: number, default: 0}
 
 
   - name: team
@@ -50,7 +51,7 @@ collections:
     fields:
       - {name: dataKind, widget: hidden, default: "team-member"}
       - {name: title, label: Name}
-      - {name: position, label: "Funktion and der Schule"}
+      - {name: position, label: "Funktion an der Schule"}
       - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
       - {name: image, label: Foto, widget: image, required: false, class: "team"}
       - name: children
@@ -60,7 +61,7 @@ collections:
         fields:
           - {label: Name, name: name, widget: string}
           - {label: Year, name: year, widget: string}
-      - {name: order, label: Platz, widget: number, default: 0}
+      - {name: order, label: Position, widget: number, default: 0}
       - {name: body, widget: hidden, default: ""}
 
 #          - {name: name, label: Name}
