@@ -4,6 +4,7 @@ templateKey: page
 path: /aufnahme
 title: Aufnahme
 section: Angebot
+order: '100'
 ---
 
 
