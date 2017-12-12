@@ -60,7 +60,11 @@ export default class Nav extends PureComponent {
 
   handleClickAdmin = () => {
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.open()
+      if (window.netlifyIdentity.currentUser()) {
+        document.location.href = "/admin/"
+      } else {
+        window.netlifyIdentity.open()
+      }
     }
   }
 
