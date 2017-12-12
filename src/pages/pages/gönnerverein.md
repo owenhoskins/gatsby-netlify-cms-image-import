@@ -16,7 +16,10 @@ Gönnerverein Freie Schule Bergmeilen, \
 8707 Uetikon am See\
 Bank Linth LLG AG, 8730 Uznach
 
-Werde Projektgötti! Die Kinder freuen sich, wenn du uns eines dieser Projekte ermöglichst.
+**[Flyer_Goennerverein](http://www.fsbergmeilen.ch/wp-content/uploads/2015/02/Flyer_Goennerverein.pdf)**
+
+Werde Projektgötti! Die Kinder freuen sich, wenn du uns eines dieser Projekte ermöglichst:\
+**[Projektgoetti](http://www.fsbergmeilen.ch/wp-content/uploads/2015/02/Projektgoetti.pdf)**
 
 Wir freuen uns zudem über jede Begegnung, die uns weiterbringt und über jede Person, die interessierten Familien von unserer Schule erzählt!\
 Kontakt: fsbergmeilen@gmx.net
