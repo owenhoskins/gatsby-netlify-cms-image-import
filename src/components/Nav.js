@@ -113,7 +113,7 @@ export default class Nav extends PureComponent {
       </Link>
 
     const renderAddedPages = (section) =>
-      _.sortBy(pagesBySection[section] || [], d => +d.order)
+      (pagesBySection[section] || [])
         .map(({ title, path }) =>
           <NavLink key={path} to={path} text={title} />
         )

@@ -90,7 +90,8 @@ export const query = graphql`
       filter: { 
         id: { regex: "/pages/"},
         frontmatter: {kind: {eq: "page"}}
-      }
+      },
+      sort: {order: ASC, fields: [frontmatter___order]}                                  
     ) {
       edges {
         node {
@@ -98,7 +99,6 @@ export const query = graphql`
             path
             title
             section
-            order
           }
         }
       }

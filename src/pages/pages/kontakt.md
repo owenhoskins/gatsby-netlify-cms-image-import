@@ -4,6 +4,7 @@ templateKey: page
 path: /kontakt
 title: Kontakt
 section: Über uns
+order: '0'
 ---
 ## Adresse
 

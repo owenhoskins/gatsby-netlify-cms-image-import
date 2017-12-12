@@ -4,6 +4,7 @@ templateKey: page
 path: /goennerverein
 title: Gönnerverein
 section: Über uns
+order: '0'
 ---
 Für alle, die Teil unserer Schule werden möchten gibt es den **Gönnerverein Freie Schule Bergmeilen**
 
