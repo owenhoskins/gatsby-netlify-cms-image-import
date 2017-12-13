@@ -1,6 +1,6 @@
 ---
 templateKey: news-item
-path: /inforabende
+path: /infoabende
 title: Informationsabende im Schulhaus
 date: 2018-01-24T18:00:00.000Z
 pin: true
