@@ -2,7 +2,7 @@
 kind: news
 templateKey: news-item
 layout: news
-path: /Wwww
+path: /einblicksmorgen
 title: Einblicksmorgen für Eltern
 date: 2018-01-29T08:30:46.000Z
 ---
