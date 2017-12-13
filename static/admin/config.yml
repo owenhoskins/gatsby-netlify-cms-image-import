@@ -17,7 +17,7 @@ collections:
       - {name: kind, widget: hidden, default: "news"}
       - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
       - {label: "Layout", name: "layout", widget: "hidden", default: "news"}
-      - {label: "Pfad", name: "path", widget: "string"}
+      - {label: "Pfad", name: "path", widget: "string", pattern: ['\/.[a-z0-9\-]+', "Der Pfad Muss mit '/' beginnen und darf nur aus Kleinbuchstaben (ausser Umlaute), Ziffern und '-' bestehen"]}
       - {label: "Titel", name: "title", widget: "string"}
       #- {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Datum", name: "date", widget: "datetime"}
