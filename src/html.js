@@ -11,6 +11,7 @@ if (process.env.NODE_ENV === `production`) {
 }
 
 module.exports = class HTML extends React.Component {
+
   render() {
     let css
     if (process.env.NODE_ENV === `production`) {
@@ -42,18 +43,10 @@ module.exports = class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
+          <script src="js/netlify-login.js"></script>
         </body>
       </html>
     )
   }
 }
 
-if (window && window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", function(user) {
-    if (!user) {
-      window.netlifyIdentity.on("login", function() {
-        document.location.href = "/admin/"
-      })
-    }
-  })
-}
