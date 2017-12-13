@@ -2,9 +2,9 @@
 kind: news
 templateKey: news-item
 layout: news
-path: Informationsveranstaltungen für interessierte Familien
+path: /einblicksmorgen
 title: Einblicksmorgen für Eltern
-date: 2018-01-29T09:30:46+01:00
+date: 2018-01-29T08:30:46.000Z
 ---
 Am Einblicksmorgen haben interessierte Eltern die Möglichkeit, den Alltag in unserer Schule mit zu erleben. Nach einer kurzen Einführung können Basis- und Primarstufe besucht werden. Im Anschluss können Fragen beantwortet und Eindrücke ausgetauscht werden.
 
