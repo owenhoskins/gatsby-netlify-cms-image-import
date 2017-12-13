@@ -42,7 +42,7 @@ const NewsColumn = ({ newsRemarks, numItemsToShow }) => {
                 <Link to={newsItem.frontmatter.path}>{newsItem.frontmatter.title}</Link>
               </h3>
               <p>
-                <small>Am {formatDate(newsItem.frontmatter.date)}</small>
+                <small>{formatDate(newsItem.frontmatter.date)}</small>
               </p>
               <br/>
               <p>
