@@ -1,8 +1,8 @@
 ---
 templateKey: news-item
-path: Informations-Veranstaltungen für interessierte Familien
+path: /inforabende
 title: Informationsabende im Schulhaus
-date: 2018-01-24T19:00:00+01:00
+date: 2018-01-24T18:00:00.000Z
 pin: true
 ---
 ## Wir laden interessierte Familien zum gegenseitigen Kennenlernen ein und stellen unser Konzept vor
