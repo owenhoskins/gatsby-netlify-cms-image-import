@@ -18,7 +18,7 @@ Wer an einem Schulplatz interessiert ist, geht folgendermassen vor:
 4. **Anmeldegespräch: **Im Anmeldegespräch werden gegenseitige Erwartungen geklärt und
    die persönlichen Bedürfnisse des Kindes/der Familie besprochen. Erst wenn das
    Bauchgefühl auf allen Seiten stimmt und alle Fragen geklärt sind, wird ein Vertrag
-   unterschrieben.
+   unterschrieben. Der Einstieg in unsere Schule ist auch während dem laufenden Schuljahr möglich.
 
 <div class="box" style="text-align:center">
   <a 
