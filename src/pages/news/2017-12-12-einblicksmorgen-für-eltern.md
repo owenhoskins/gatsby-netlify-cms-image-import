@@ -10,7 +10,7 @@ Am Einblicksmorgen haben interessierte Eltern die Möglichkeit, den Alltag in un
 
 **Ankunft: 9:30**
 
-Ende des Einblicksmorgens: 12:00
+Ende des Einblickmorgens: 12:00
 
 **Die Anzahl Plätze für den Einblicksmorgen ist beschränkt. Wir bitten um verbindliche Anmeldung per email fsbergmeilen@gmx.net**
 
