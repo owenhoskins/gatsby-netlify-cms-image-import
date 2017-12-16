@@ -15,6 +15,6 @@ Ein einfacher Apéro im Anschluss an den Informationsteil bietet Gelegenheit fü
 
 Kinder sind herzlich willkommen, Spielmöglichkeiten sind vorhanden.
 
-Die Informationsanlässe finden im Schulhaus an der Toggwilerstr. 154 in Meilen statt, 
+Der Informationsanlass findet im Schulhaus an der Toggwilerstr. 154 in Meilen statt, 
 
 Parkplätze sind vorhanden.
