@@ -2,7 +2,7 @@
 templateKey: news-item
 path: /infoabende
 title: Informationsabende im Schulhaus
-date: 2018-01-24T18:00:00.000Z
+date: 2018-01-17T19:00:00+01:00
 pin: true
 ---
 ## Wir laden interessierte Familien zum gegenseitigen Kennenlernen ein und stellen unser Konzept vor
