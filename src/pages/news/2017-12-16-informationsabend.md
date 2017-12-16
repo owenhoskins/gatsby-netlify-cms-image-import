@@ -3,8 +3,8 @@ kind: news
 templateKey: news-item
 layout: news
 path: /infoabend
-title: Informationsabend
-date: 2018-03-14T19:00:43+01:00
+title: 'Informationsabend im Schulhaus,  19 Uhr'
+date: 2018-03-14T18:00:43.000Z
 ---
 ## Wir laden interessierte Familien zum gegenseitigen Kennenlernen ein und stellen unser Konzept vor
 
