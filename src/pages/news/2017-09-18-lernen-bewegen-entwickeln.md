@@ -18,9 +18,3 @@ Kinder sind herzlich willkommen, Spielmöglichkeiten sind vorhanden.
 Die Informationsanlässe finden im Schulhaus an der Toggwilerstr. 154 in Meilen statt, 
 
 Parkplätze sind vorhanden.
-
-**Daten Informationsabende: **
-
-**Mittwoch 17. Januar 2018   19.00 Uhr**
-
-**Mittwoch 14. März 2018   19.00 Uhr**
