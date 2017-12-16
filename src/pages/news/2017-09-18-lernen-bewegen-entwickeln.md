@@ -11,18 +11,16 @@ An unseren Informationsabenden stellen wir uns vor, informieren über den Wochen
 
 Ein einfacher Apéro im Anschluss an den Informationsteil bietet Gelegenheit für persönliche Gespräche und Austausch.
 
-
-Wir bitten um eine Anmeldung per email fsbergmeilen@gmx.net mit Namen, Anzahl Erwachsene und Kinder, Datum des Anlasses.
-
+**Wir bitten um eine Anmeldung per email: fsbergmeilen@gmx.net mit Namen, Anzahl Erwachsenen und Kindern, Datum des Anlasses.**
 
 Kinder sind herzlich willkommen, Spielmöglichkeiten sind vorhanden.
-
-
 
 Die Informationsanlässe finden im Schulhaus an der Toggwilerstr. 154 in Meilen statt, 
 
 Parkplätze sind vorhanden.
 
+**Daten Informationsabende: **
 
+**Mittwoch 17. Januar 2018   19.00 Uhr**
 
-**Daten Informationsabende: Mi. 24. Januar und Mi. 21. März **
+**Mittwoch 14. März 2018   19.00 Uhr**
