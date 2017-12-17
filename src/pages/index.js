@@ -105,7 +105,7 @@ export const pageQuery = graphql`
   query IndexQuery {
   
     newsRemarks: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
+      sort: { order: ASC, fields: [frontmatter___date] },
       filter:{ frontmatter: { templateKey: { eq:"news-item" } }}
     ) {
       edges {
