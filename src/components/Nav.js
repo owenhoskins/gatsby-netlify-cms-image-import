@@ -8,10 +8,11 @@ import { css } from 'glamor'
 
 const styles = {
   brand: css({
-    paddingLeft: 65,
-    backgroundImage: `url(${logo})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPositionX: 10,
+    paddingLeft: 35,
+    // paddingLeft: 65,
+    // backgroundImage: `url(${logo})`,
+    // backgroundRepeat: 'no-repeat',
+    // backgroundPositionX: 10,
     height: 64,
     '& > .title': {
       height: 64,
