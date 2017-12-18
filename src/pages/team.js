@@ -38,11 +38,14 @@ const styles = {
       flexDirection: 'column',
     }),
     name: css({
-      fontSize: '1.1rem',
+      fontSize: '1.5rem',
+      // fontWeight: 'bold',
+      fontFamily: 'Fresca',
       marginBottom: '.6rem',
+      color: '#346',
     }),
     position: css({
-      fontSize: '0.8rem',
+      fontSize: '0.9rem',
       marginBottom: '.5rem',
       fontWeight: 'bold',
     }),
