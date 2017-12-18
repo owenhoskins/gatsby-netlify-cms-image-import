@@ -1,7 +1,14 @@
 import React from 'react'
 import _ from 'lodash'
 import Img from 'gatsby-image'
+import { css } from 'glamor'
 
+
+const styles = {
+  img: css({
+    borderRadius: '50%',
+  })
+}
 
 const TeamMember = ({
   name,
@@ -18,6 +25,7 @@ const TeamMember = ({
       <div className="column is-one-quarter">
         { resolutions && <figure className=" is-2by3">
           <Img
+            className={styles.img}
             resolutions={resolutions}
           />
           {/*<img*/}
@@ -97,7 +105,7 @@ export const pageQuery = graphql`
             name: title
             image {
               childImageSharp {
-               resolutions(width: 160, height: 200, quality: 90) {
+               resolutions(width: 160, height: 160, quality: 90) {
                  ...GatsbyImageSharpResolutions
                }
               }
