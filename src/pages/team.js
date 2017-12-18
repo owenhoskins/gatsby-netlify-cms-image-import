@@ -105,7 +105,7 @@ export const pageQuery = graphql`
             name: title
             image {
               childImageSharp {
-               resolutions(width: 160, height: 160, quality: 90) {
+               resolutions(width: 160, height: 160, quality: 90, cropFocus: CENTER) {
                  ...GatsbyImageSharpResolutions
                }
               }
