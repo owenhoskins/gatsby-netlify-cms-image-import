@@ -3,7 +3,7 @@ dataKind: team-member
 title: Karin Escher
 position: 'Schulleitung, Begleitung im Schulalltag'
 experience: ' Spielgruppenleiterin Zertifikat SSLV, Drogistin HF mit mehrjähriger Erfahrung im praxisnahen Unterrichten von Berufsschülern (überbetriebliche Kurse Drogisten)'
-image: ../img/karin.png
+image: ../img/karin.jpg
 children:
   - name: Jael
     year: '2012'
