@@ -3,7 +3,7 @@ dataKind: team-member
 title: Martina Kunz Guggenbühl
 position: 'Schulleitung, Lernbegleiterin im Schulalltag'
 experience: >-
-  Primarlehrerin, Tanz-und Bewegungspädagogin, Lern- und
+  Primarlehrerin, Tanz- und Bewegungspädagogin, Lern- und
   Entwicklungsbegleiterin, rituelle Singgruppenleiterin, Weiterbildung in
   integrativer Prozessbegleitung IBP, Elternbildung in integrativer Erziehung,
   mehrjährige Erfahrung als Primarlehrerin und als Lehrperson für Integrative

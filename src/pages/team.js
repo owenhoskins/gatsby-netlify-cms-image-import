@@ -5,67 +5,55 @@ import { css } from 'glamor'
 
 
 const styles = {
+  teamMembers: css({
+    display: 'flex',
+    flexDirection: 'row',
+    '& > *+*': {
+      marginLeft: '1rem',
+    }
+  }),
+  teamMember: {
+    outer: css({
+      display: 'flex',
+      textAlign: 'center',
+      flexBasis: 0,
+      flexGrow: 1,
+    }),
+    content: css({
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }),
+    nameAndPosition: css({
+      marginTop: '1rem',
+      marginBottom: '1rem',
+      // minHeight: '4.5rem',
+      alignItems: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+    }),
+    name: css({
+      fontSize: '1.1rem',
+      marginBottom: '.6rem',
+    }),
+    position: css({
+      fontSize: '0.8rem',
+      marginBottom: '.5rem',
+      fontWeight: 'bold',
+    }),
+    experience: css({
+      fontSize: '0.8rem',
+      marginBottom: '.5rem',
+    }),
+    kids: {
+      title: css({
+        fontSize: '0.8rem',
+      }),
+    }
+  },
   img: css({
     borderRadius: '50%',
   })
-}
-
-const TeamMember = ({
-  name,
-  image,
-  position,
-  experience,
-  children
-}) => {
-  const resolutions = _.get(image, 'childImageSharp.resolutions')
-  return <div
-    className="box"
-  >
-    <article className="columns">
-      <div className="column is-one-quarter">
-        { resolutions && <figure className=" is-2by3">
-          <Img
-            className={styles.img}
-            resolutions={resolutions}
-          />
-          {/*<img*/}
-            {/*src={image}*/}
-            {/*alt={name}*/}
-            {/*style={{ maxWidth: 200, maxHeight: 300, paddingRight: 30 }}*/}
-          {/*/>*/}
-        </figure>
-        }
-      </div>
-      <div className="column">
-        <div className="content">
-            <h2 className="title is-3">{name}</h2>
-            <div>
-              <h3 className="subtitle is-5">Funktion an der Schule</h3>
-              { position }
-            </div>
-            <br/>
-            <div>
-              <h3 className="subtitle is-5">Ausbildung/Berufserfahrung</h3>
-              { experience }
-            </div>
-            <br/>
-            {!_.isEmpty(children) &&
-              <div>
-                <h3 className="subtitle is-5">Kinder</h3>
-              <ul>
-                {
-                  children.map(({ name, year }) =>
-                   <li key={name}>{ name }, { year }</li>
-                  )
-                }
-              </ul>
-              </div>
-            }
-            { /* bio */ }
-        </div>
-      </div>
-    </article>
-  </div>
 }
 
 
@@ -79,8 +67,9 @@ export default (
   }
 ) =>
   <section className="section">
-    <div className="columns">
-      <div className="column">
+    <h2 className="title is-size-3 has-text-info is-bold-light">Team</h2>
+    <div className="column">
+      <div {...styles.teamMembers}>
         {members.map(
           ({  node: {
               id,
@@ -89,6 +78,57 @@ export default (
       </div>
     </div>
   </section>
+
+
+
+const TeamMember = ({
+  name,
+  image,
+  position,
+  experience,
+  children
+}) => {
+  const resolutions = _.get(image, 'childImageSharp.resolutions')
+  return (
+    <div {...styles.teamMember.outer}>
+      <article>
+        <div>
+          { resolutions && <figure className=" is-2by3">
+            <Img
+              className={styles.img}
+              resolutions={resolutions}
+            />
+          </figure>
+          }
+        </div>
+        <div>
+          <div className="content">
+            <div {...styles.teamMember.content}>
+              <div {...styles.teamMember.nameAndPosition}>
+                <div {...styles.teamMember.name}>{name}</div>
+                <div {...styles.teamMember.position}>{ position }</div>
+              </div>
+              <div>
+                <div {...styles.teamMember.experience}>
+                { experience }
+                </div>
+              </div>
+              {!_.isEmpty(children) &&
+              <div>
+                <div {...styles.teamMember.kids.title}>
+                  Kinder: {children.map(({ name, year }) => `${name}, ${year}`).join(', ')}
+                </div>
+              </div>
+              }
+              { /* bio */ }
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  )
+}
+
 
 
 export const pageQuery = graphql`
