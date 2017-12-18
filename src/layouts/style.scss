@@ -87,3 +87,7 @@ a {
     color: $primaryColor;
   }
 }
+
+li > p:last-child {
+  margin-bottom: 1.5rem;
+}
