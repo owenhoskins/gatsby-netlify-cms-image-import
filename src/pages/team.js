@@ -8,6 +8,8 @@ const styles = {
   teamMembers: css({
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
     '& > *+*': {
       marginLeft: '1rem',
     }
@@ -18,6 +20,9 @@ const styles = {
       textAlign: 'center',
       flexBasis: 0,
       flexGrow: 1,
+      marginBottom: '5rem',
+      minWidth: '13rem',
+      maxWidth: '20rem',
     }),
     content: css({
       display: 'flex',
