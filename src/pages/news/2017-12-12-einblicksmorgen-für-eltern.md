@@ -14,4 +14,6 @@ Ende des Einblickmorgens: 12:00
 
 **Die Anzahl Plätze für den Einblicksmorgen sind beschränkt. Wir bitten um verbindliche Anmeldung per email: fsbergmeilen@gmx.net**
 
-Für interessierte Eltern ist der Einblicksmorgen kostenlos. Berufskollegen und Interessierte bitten wir, uns für den Einblicksmorgen einen Unterstützungsbeitrag (Richtwert 30 - 50.-) zu überweisen.
+**Der Einblicksmorgen ist ein Anlass für Erwachsene. Es ist nicht möglich, Kinder mitzunehmen. **Damit Kinder unsere Schule kennenlernen können, werden individuelle Schnupperwochen vereinbart. Wir empfehlen Eltern, vorgängig einen Einblicksmorgen oder einen Informationsabend zu besuchen.
+
+Für interessierte Eltern ist der Einblicksmorgen kostenlos. Berufskollegen und Interessierte bitten wir, uns für den Einblicksmorgen einen Unterstützungsbeitrag (Richtwert 30.- bis 50.-) zu überweisen.
