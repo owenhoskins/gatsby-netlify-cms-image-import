@@ -43,12 +43,8 @@ export default (
         {props.location.pathname === '/' &&
         <div className="container">
           <section className="section">
-            <div className="columns">
-              <div className="column">
-                <h1 className="title">{hero.title}</h1>
-                <div className="content">{hero.text}</div>
-              </div>
-            </div>
+            <h1 className="title">{hero.title}</h1>
+            <div className="content">{hero.text}</div>
           </section>
         </div>
         }
