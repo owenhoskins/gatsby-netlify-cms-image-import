@@ -39,6 +39,7 @@ const styles = {
     }),
     name: css({
       fontSize: '1.5rem',
+      lineHeight: '1.65rem',
       // fontWeight: 'bold',
       fontFamily: 'Fresca',
       marginBottom: '.6rem',
