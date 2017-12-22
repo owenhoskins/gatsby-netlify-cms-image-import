@@ -1,8 +1,7 @@
 import React from 'react';
 import Nav from '../components/Nav'
 import Helmet from 'react-helmet';
-import 'bulma';
-import './style.scss'
+import './styles.scss'
 import Carousel from '../components/Carousel'
 
 

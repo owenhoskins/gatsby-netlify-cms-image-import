@@ -76,7 +76,7 @@ export default (
   }
 ) =>
   <section className="section">
-    <h2 className="title is-size-3 has-text-info is-bold-light">Team</h2>
+    <h2 className="title is-size-3 is-bold-light">Team</h2>
     <div className="column">
       <div {...styles.teamMembers}>
         {members.map(

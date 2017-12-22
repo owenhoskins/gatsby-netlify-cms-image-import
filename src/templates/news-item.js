@@ -8,7 +8,7 @@ export default function Template({ data }) {
     <section className="section">
       <Helmet title={`${post.frontmatter.title}`} />
       <div className="content">
-        <h1 className="title is-size-2 has-text-info is-bold-light">
+        <h1 className="title is-size-3 is-bold-light">
           {post.frontmatter.title}
         </h1>
         <p style={{ marginTop: '-.5rem', marginBottom: '2rem' }}>

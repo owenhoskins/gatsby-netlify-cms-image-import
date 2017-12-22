@@ -1,7 +1,15 @@
-$primaryColor: #139aee;
-
 @import url('https://fonts.googleapis.com/css?family=Fresca|Open+Sans');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import './colors.scss';
+
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/functions";
+
+$primary: $color-primary-0;
+$info: $color-primary-1;
+
+@import '../../node_modules/bulma/bulma';
 
 html, body {
   font-family: 'Open Sans', sans-serif;
@@ -13,9 +21,17 @@ h1, h2, h3, h4 {
 
 .title {
   font-size: 1.75rem;
-  color: #346;
+  color: $color-primary-4;
+  //color: $color-secondary-2-3;
   font-weight: normal;
 }
+
+.hero.is-info.is-bold {
+  background-image: linear-gradient(141deg, $color-primary-1 0%, $color-primary-2 31%, $color-primary-1 100%);
+  //background-image: linear-gradient(141deg, $color-secondary-2-1 0%, $color-secondary-2-2 31%, $color-secondary-2-3 100%);
+  //background-image: linear-gradient(141deg, $color-complement-1 0%, $color-complement-2 31%, $color-complement-3 100%);
+}
+
 
 h3 {
   font-size: 1.5rem;
@@ -25,18 +41,24 @@ h3 {
   font-size: 1.1rem;
   h1.title {
     font-weight: bold;
-    color: $primaryColor;
+    color: $color-primary-1;
     font-size: 2rem;
   }
-  a {
-    color: $primaryColor;
+  a.navbar-item {
+    color: $color-primary-2;
     font-weight: bold;
-    //color: #3273dc;
+    &:hover {
+      color: $color-primary-3;
+    }
+    &.is-active {
+      color: $color-primary-4;
+      //color: $color-secondary-2-3;
+    }
   }
 }
 
 a {
-  color: $primaryColor;
+  color: $primary;
 }
 
 .container {
@@ -47,10 +69,6 @@ a {
   padding: 1rem;
 }
 
-
-.hero.is-info.is-bold {
-  background-image: linear-gradient(141deg, $primaryColor 0%, #04a6d7 71%, #3287f5 100%);
-}
 
 @media screen and (max-width: 500px) {
   .navbar-brand .navbar-item h1.title {
@@ -84,7 +102,7 @@ a {
   .navbar-item div.navbar-link {
     cursor: default;
     font-weight: bold;
-    color: $primaryColor;
+    color: $primary;
   }
 }
 
