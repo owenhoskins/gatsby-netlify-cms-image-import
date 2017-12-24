@@ -154,6 +154,7 @@ export default class Nav extends PureComponent {
                 Philosophie
               </div>
               <div className="navbar-dropdown">
+                <NavLink to="/goals" text="Unsere Ziele"/>
                 {renderAddedPages('Philosophie')}
               </div>
             </div>

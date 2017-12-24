@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import { css } from 'glamor'
 import EventsList from '../components/EventsList'
+import GoalsList from '../components/GoalsList'
 
 
 const styles = {
@@ -45,21 +46,6 @@ const EventsColumn = ({ eventsRemarks, numItemsToShow }) => {
 }
 
 
-const Goals = ({ title, goals }) =>
-  <div>
-    <h2 className="title">{title}</h2>
-    <div className="content">
-      {
-        goals.map(({ title, description }) =>
-          <div key={title}>
-            <h4>{ title }</h4>
-            { description }<br/><br/>
-          </div>
-        )
-      }
-    </div>
-  </div>
-
 export default (
   {
     data: {
@@ -73,7 +59,10 @@ export default (
       {...styles.columns}
     >
       <div className="column">
-        <Goals {...goals} />
+        <h2 className="title">{goals.title}</h2>
+        <div className="content">
+          <GoalsList {...goals} />
+        </div>
       </div>
 
       <EventsColumn
@@ -93,13 +82,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         numEvents
-        goals {
-          title
-          goals {
-            description
-            title
-          }
-        }
+        ...goals
       }
     }
   }
