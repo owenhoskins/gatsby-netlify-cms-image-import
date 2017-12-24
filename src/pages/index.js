@@ -1,8 +1,8 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import _ from 'lodash'
 import { css } from 'glamor'
-import { formatDate } from '../utils'
+import EventsList from '../components/EventsList'
+
 
 const styles = {
   columns: css({
@@ -25,37 +25,21 @@ const EventsColumn = ({ eventsRemarks, numItemsToShow }) => {
     return null
   }
   const { edges: eventsEntries } = eventsRemarks
-  const events = _.take(eventsEntries, numItemsToShow)
+  const events =
+    _.take(
+      eventsEntries.filter(({ node }) => new Date(node.frontmatter.date) >= new Date())
+    , numItemsToShow
+  )
+  if (_.isEmpty(events)) {
+    return null
+  }
   return (
     <div
       className="column"
       {...styles.aktuelles}
     >
       <h2 className="title">Aktuelles</h2>
-      {events.map(({ node: event }) => {
-        return (
-          <div
-            className="box"
-            key={event.id}
-          >
-              <h3>
-                <Link to={event.frontmatter.path}>{event.frontmatter.title}</Link>
-              </h3>
-              <p>
-                <small>{formatDate(event.frontmatter.date)}</small>
-              </p>
-              <br/>
-              <p>
-                {event.excerpt}
-                <br/>
-                <br/>
-                <Link className="button is-info is-small" to={event.frontmatter.path}>
-                  Weiterlesen...
-                </Link>
-              </p>
-          </div>
-        );
-      })}
+      <EventsList events={events}/>
     </div>
   )
 }
@@ -104,23 +88,7 @@ export default (
 export const pageQuery = graphql`
   query IndexQuery {
   
-    eventsRemarks: allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___date] },
-      filter:{ frontmatter: { templateKey: { eq:"event" } }}
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 400)
-          id
-          frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
-            path
-          }
-        }
-      }
-    }
+    ...events  
 
     site {
       siteMetadata {

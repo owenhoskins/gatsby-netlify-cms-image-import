@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import Img from 'gatsby-image'
 import { css } from 'glamor'
+import Helmet from 'react-helmet';
 
 
 const styles = {
@@ -76,6 +77,9 @@ export default (
   }
 ) =>
   <section className="section">
+    <Helmet>
+      <title>Team</title>
+    </Helmet>
     <h2 className="title is-size-3 is-bold-light">Team</h2>
     <div className="column">
       <div {...styles.teamMembers}>

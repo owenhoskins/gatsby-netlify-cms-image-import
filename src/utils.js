@@ -6,3 +6,8 @@ export const formatDate = (date) =>
     'de-CH',
     { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
   )
+
+export const formatTime = (date) =>
+  new Date(
+    date
+  ).getHours() + ' Uhr'

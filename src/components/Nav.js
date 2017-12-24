@@ -137,7 +137,7 @@ export default class Nav extends PureComponent {
                 Aktuelles
               </div>
               <div className="navbar-dropdown">
-                <NavLink to="/veranstaltungen" text="Veranstaltungen"/>
+                <NavLink to="/events" text="Veranstaltungen"/>
               </div>
             </div>
 

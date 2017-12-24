@@ -3,7 +3,7 @@ kind: event
 templateKey: event
 layout: event
 path: /infoabend
-title: 'Informationsabend im Schulhaus,  19 Uhr'
+title: 'Informationsabend im Schulhaus'
 date: 2018-03-14T18:00:43.000Z
 ---
 ## Wir laden interessierte Familien zum gegenseitigen Kennenlernen ein und stellen unser Konzept vor

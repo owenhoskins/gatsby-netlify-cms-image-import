@@ -2,7 +2,7 @@
 kind: event
 templateKey: event
 path: /infoabende
-title: 'Informationsabend im Schulhaus, 19 Uhr'
+title: 'Informationsabend im Schulhaus'
 date: 2018-01-17T18:00:00.000Z
 pin: true
 ---
