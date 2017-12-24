@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../components/Nav'
 import Helmet from 'react-helmet';
-import './styles.scss'
+import '../styles/styles.scss'
 import Carousel from '../components/Carousel'
 
 

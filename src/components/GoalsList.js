@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'glamor'
-import colors from '../layouts/colors.scss'
+import colors from '../styles/colors.scss'
 
 
 const styles = {
