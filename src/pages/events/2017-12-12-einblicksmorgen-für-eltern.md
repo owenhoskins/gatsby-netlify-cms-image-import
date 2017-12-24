@@ -1,7 +1,7 @@
 ---
-kind: news
-templateKey: news-item
-layout: news
+kind: event
+templateKey: event
+layout: event
 path: /einblicksmorgen-fuer-eltern
 title: Einblicksmorgen für Eltern
 date: 2018-01-29T08:30:46.000Z

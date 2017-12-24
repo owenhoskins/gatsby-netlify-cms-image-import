@@ -8,7 +8,7 @@ order: '100'
 ---
 Wer an einem Schulplatz interessiert ist, geht folgendermassen vor:
 
-1. **Kontaktaufnahme per Email und evtl. Besuch einer Elterninformationsveranstaltung.**
+1. **Kontaktaufnahme per Email und evtl. Besuch einer Elterninformationsevent.**
 
    In einem ersten Schritt ist es wichtig, Team und Konzept kennenzulernen, Fragen zu stellen
    und zu überlegen, ob die FREIE Schule Bergmeilen die passende Schule für Kind und Eltern ist. Damit sich ein Kind bei uns wohl und sicher fühlen kann, ist es wesentlich, dass die Eltern das Schulkonzept der Freien Schule Bergmeilen mittragen. 

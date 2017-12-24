@@ -20,36 +20,36 @@ const styles = {
 
 
 
-const NewsColumn = ({ newsRemarks, numItemsToShow }) => {
-  if (_.isEmpty(newsRemarks)) {
+const EventsColumn = ({ eventsRemarks, numItemsToShow }) => {
+  if (_.isEmpty(eventsRemarks)) {
     return null
   }
-  const { edges: newsEntries } = newsRemarks
-  const news = _.take(newsEntries, numItemsToShow)
+  const { edges: eventsEntries } = eventsRemarks
+  const events = _.take(eventsEntries, numItemsToShow)
   return (
     <div
       className="column"
       {...styles.aktuelles}
     >
       <h2 className="title">Aktuelles</h2>
-      {news.map(({ node: newsItem }) => {
+      {events.map(({ node: event }) => {
         return (
           <div
             className="box"
-            key={newsItem.id}
+            key={event.id}
           >
               <h3>
-                <Link to={newsItem.frontmatter.path}>{newsItem.frontmatter.title}</Link>
+                <Link to={event.frontmatter.path}>{event.frontmatter.title}</Link>
               </h3>
               <p>
-                <small>{formatDate(newsItem.frontmatter.date)}</small>
+                <small>{formatDate(event.frontmatter.date)}</small>
               </p>
               <br/>
               <p>
-                {newsItem.excerpt}
+                {event.excerpt}
                 <br/>
                 <br/>
-                <Link className="button is-info is-small" to={newsItem.frontmatter.path}>
+                <Link className="button is-info is-small" to={event.frontmatter.path}>
                   Weiterlesen...
                 </Link>
               </p>
@@ -79,8 +79,8 @@ const Goals = ({ title, goals }) =>
 export default (
   {
     data: {
-      newsRemarks,
-      site: { siteMetadata: { goals, numNewsItems } }
+      eventsRemarks,
+      site: { siteMetadata: { goals, numEvents } }
     }
   }) =>
   <section className="section">
@@ -92,9 +92,9 @@ export default (
         <Goals {...goals} />
       </div>
 
-      <NewsColumn
-        newsRemarks={newsRemarks}
-        numItemsToShow={numNewsItems}
+      <EventsColumn
+        eventsRemarks={eventsRemarks}
+        numItemsToShow={numEvents}
       />
     </div>
   </section>
@@ -104,9 +104,9 @@ export default (
 export const pageQuery = graphql`
   query IndexQuery {
   
-    newsRemarks: allMarkdownRemark(
+    eventsRemarks: allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___date] },
-      filter:{ frontmatter: { templateKey: { eq:"news-item" } }}
+      filter:{ frontmatter: { templateKey: { eq:"event" } }}
     ) {
       edges {
         node {
@@ -124,7 +124,7 @@ export const pageQuery = graphql`
 
     site {
       siteMetadata {
-        numNewsItems
+        numEvents
         goals {
           title
           goals {

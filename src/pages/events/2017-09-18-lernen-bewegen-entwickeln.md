@@ -1,5 +1,6 @@
 ---
-templateKey: news-item
+kind: event
+templateKey: event
 path: /infoabende
 title: 'Informationsabend im Schulhaus, 19 Uhr'
 date: 2018-01-17T18:00:00.000Z

@@ -8,15 +8,15 @@ public_folder: "../img"
 
 collections:
 
-  - name: "news" # Used in routes, e.g., /admin/collections/blog
+  - name: "events" # Used in routes, e.g., /admin/collections/blog
     label: "Aktuelles" # Used in the UI
-    folder: "src/pages/news" # The path to the folder where the documents are stored
+    folder: "src/pages/events" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {name: kind, widget: hidden, default: "news"}
-      - {label: "Template", name: "templateKey", widget: "hidden", default: "news-item" }
-      - {label: "Layout", name: "layout", widget: "hidden", default: "news"}
+      - {name: kind, widget: hidden, default: "event"}
+      - {label: "Template", name: "templateKey", widget: "hidden", default: "event" }
+      - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
       - {label: "Pfad", name: "path", widget: "string", pattern: ['^\/[a-z0-9\-]+$', "Muss mit '/' beginnen und darf nur aus Kleinbuchstaben (ausser Umlaute), Ziffern und '-' bestehen"]}
       - {label: "Titel", name: "title", widget: "string"}
       #- {label: "Image", name: "image", widget: "image", required: false}
@@ -90,7 +90,7 @@ collections:
         fields:
           - {label: "Name der Webseite", name: title, widget: "string"}
           - {label: "Google Analytics UA-Code", name: trackingId, widget: "string"}
-          - {label: "Anzahl News auf Homepage", name: numNewsItems, widget: number}
+          - {label: "Anzahl Veranstaltungen auf Homepage", name: numEvents, widget: number}
           - label: "Meta"
             name: meta
             widget: object

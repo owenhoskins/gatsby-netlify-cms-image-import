@@ -21,7 +21,7 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-  query NewsItemByPath($path: String!) {
+  query EventByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
