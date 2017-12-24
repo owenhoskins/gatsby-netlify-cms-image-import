@@ -2,9 +2,13 @@ import React from 'react'
 import { formatDate, formatTime } from '../utils'
 import Link from 'gatsby-link'
 import { css } from 'glamor'
+import CalendarDate from './CalendarDate'
 
 
 const styles = {
+  calendarDate: css({
+    float: 'left',
+  }),
   datetime: {
     outer: css({
       '& > *+*': css({
@@ -20,6 +24,8 @@ const styles = {
   }
 }
 
+
+
 const EventsList = ({ events }) =>
   <div>
     {events.map(({ node: event }) => {
@@ -28,22 +34,25 @@ const EventsList = ({ events }) =>
           className="box"
           key={event.id}
         >
-            <h3>
-              <Link to={event.frontmatter.path}>{event.frontmatter.title}</Link>
-            </h3>
-            <p {...styles.datetime.outer}>
-              <small>{formatDate(event.frontmatter.date)}</small>,
-              <small {...styles.datetime.hours}>{formatTime(event.frontmatter.date)}</small>
-            </p>
+          <div {...styles.calendarDate}>
+            <CalendarDate date={event.frontmatter.date}/>
+          </div>
+          <h3>
+            <Link to={event.frontmatter.path}>{event.frontmatter.title}</Link>
+          </h3>
+          <p {...styles.datetime.outer}>
+            <small>{formatDate(event.frontmatter.date)}</small>,
+            <small {...styles.datetime.hours}>{formatTime(event.frontmatter.date)}</small>
+          </p>
+          <br/>
+          <p>
+            {event.excerpt}
             <br/>
-            <p>
-              {event.excerpt}
-              <br/>
-              <br/>
-              <Link className="button is-info is-small" to={event.frontmatter.path}>
-                Weiterlesen...
-              </Link>
-            </p>
+            <br/>
+            <Link className="button is-info is-small" to={event.frontmatter.path}>
+              Weiterlesen...
+            </Link>
+          </p>
         </div>
       );
     })}
