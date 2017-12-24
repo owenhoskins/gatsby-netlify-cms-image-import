@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from 'glamor'
+import colors from '../styles/colors.scss'
 
 const styles = {
   outer: css({
@@ -9,18 +10,16 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '4rem',
-    height: '4rem',
+    width: '4.5rem',
+    height: '5rem',
   }),
   date: css({
-    // display: 'flex',
     fontSize: '1.5rem',
-    fontWeight: 'bold',
     lineHeight: '2rem',
   }),
   month: css({
-    fontSize: '1.1rem',
-    // display: 'flex',
+    fontSize: '1.2rem',
+    color: colors.secondary13,
     textTransform: 'uppercase',
     textAlign: 'center',
   }),
