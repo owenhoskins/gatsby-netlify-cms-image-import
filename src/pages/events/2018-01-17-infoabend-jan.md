@@ -1,12 +1,12 @@
 ---
 kind: event
 templateKey: event
-layout: event
-path: /infoabend
+path: /infoabend-jan
 title: 'Informationsabend im Schulhaus'
-date: 2018-03-14T18:00:43.000Z
+date: 2018-01-17T18:00:00.000Z
+pin: true
 ---
-## Wir laden interessierte Familien zum gegenseitigen Kennenlernen ein und stellen unser Konzept vor
+**Wir laden interessierte Familien zum gegenseitigen Kennenlernen ein und stellen unser Konzept vor.**
 
 An unseren Informationsabenden stellen wir uns vor, informieren über den Wochenablauf und beantworten Fragen zum freien Lernen und zu unserer Schule. 
 
