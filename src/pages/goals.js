@@ -23,11 +23,15 @@ export default (
 
 export const eventsFragment = graphql`
   fragment goals on RootQueryType {
-    goals {
-      title
-      goals {
-        description
-        title
+    site {
+      siteMetadata {
+        goals {
+          title
+          goals {
+            description
+            title
+          }
+        }
       }
     }
   }
@@ -35,10 +39,6 @@ export const eventsFragment = graphql`
 
 export const pageQuery = graphql`
   query GoalsPageQuery {
-    site {
-      siteMetadata {
-        ...goals
-      }
-    }
+    ...goals
   }
 `;

@@ -78,11 +78,11 @@ export const pageQuery = graphql`
   query IndexQuery {
   
     ...events  
+    ...goals
 
     site {
       siteMetadata {
         numEvents
-        ...goals
       }
     }
   }
