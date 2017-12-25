@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'glamor'
-import colors from '../styles/styles.scss'
+import colors from '../styles/colors'
 
 const styles = {
   outer: css({
