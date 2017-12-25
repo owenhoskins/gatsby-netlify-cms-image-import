@@ -39,7 +39,7 @@ const EventsColumn = ({ eventsRemarks, numItemsToShow }) => {
       className="column"
       {...styles.aktuelles}
     >
-      <h2 className="title">Aktuelles</h2>
+      <h2 className="title">Veranstaltungen</h2>
       <EventsList events={events}/>
     </div>
   )

@@ -6,6 +6,11 @@ import CalendarDate from './CalendarDate'
 
 
 const styles = {
+  outer: css({
+    '& > *+*': css({
+      marginTop: 5,
+    })
+  }),
   calendarDate: css({
     float: 'left',
   }),
@@ -35,36 +40,38 @@ const styles = {
 
 
 const EventsList = ({ events }) =>
-  <div>
+  <div {...styles.outer}>
     {events.map(({ node: event }) => {
       return (
-        <div
-          className="box"
-          key={event.id}
-        >
-          <div {...styles.event.header}>
-            <div {...styles.calendarDate}>
-              <CalendarDate date={event.frontmatter.date}/>
+          <div
+            className="box"
+            key={event.id}
+          >
+            <Link to={event.frontmatter.path}>
+            <div {...styles.event.header}>
+              <div {...styles.calendarDate}>
+                <CalendarDate date={event.frontmatter.date}/>
+              </div>
+              <div>
+                <h3 {...styles.event.title}>
+                  {event.frontmatter.title}
+                </h3>
+                <p {...styles.datetime.outer}>
+                  <small>{formatDate(event.frontmatter.date)}</small>,
+                  <small {...styles.datetime.hours}>{formatTime(event.frontmatter.date)}</small>
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 {...styles.event.title}>
-                <Link to={event.frontmatter.path}>{event.frontmatter.title}</Link>
-              </h3>
-              <p {...styles.datetime.outer}>
-                <small>{formatDate(event.frontmatter.date)}</small>,
-                <small {...styles.datetime.hours}>{formatTime(event.frontmatter.date)}</small>
-              </p>
-            </div>
+            {/*<p>*/}
+              {/*{event.excerpt}*/}
+              {/*<br/>*/}
+              {/*<br/>*/}
+              {/*<Link className="button is-info is-small" to={event.frontmatter.path}>*/}
+                {/*Weiterlesen...*/}
+              {/*</Link>*/}
+            {/*</p>*/}
+        </Link>
           </div>
-          <p>
-            {event.excerpt}
-            <br/>
-            <br/>
-            <Link className="button is-info is-small" to={event.frontmatter.path}>
-              Weiterlesen...
-            </Link>
-          </p>
-        </div>
       );
     })}
   </div>

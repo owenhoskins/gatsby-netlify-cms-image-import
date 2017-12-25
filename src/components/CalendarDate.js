@@ -11,14 +11,13 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     width: '4.5rem',
-    height: '5rem',
   }),
   date: css({
-    fontSize: '1.5rem',
-    lineHeight: '2rem',
+    fontSize: '1.4rem',
+    lineHeight: '1.75rem',
   }),
   month: css({
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     color: colors.secondary13,
     textTransform: 'uppercase',
     textAlign: 'center',

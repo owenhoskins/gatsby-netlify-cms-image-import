@@ -14,7 +14,7 @@ export default (
     <Helmet>
       <title>{goals.title}</title>
     </Helmet>
-    <h2 className="title">{goals.title}</h2>
+    <h2 className="title is-size-3">{goals.title}</h2>
     <div className="content">
       <GoalsList goals={goals.goals} />
     </div>
