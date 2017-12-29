@@ -5,7 +5,7 @@
   "author": "Ilya Boyandin <ilya@boyandin.me>",
   "dependencies": {
     "bulma": "^0.6.0",
-    "gatsby": "^1.9.103",
+    "gatsby": "^1.9.149",
     "gatsby-image": "^1.0.21",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-glamor": "^1.6.8",
