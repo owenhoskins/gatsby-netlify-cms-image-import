@@ -1,8 +1,4 @@
-const yaml = require('js-yaml')
-const fs = require('fs')
-const loadYaml = (fname) =>
-  yaml.safeLoad(fs.readFileSync(fname, 'utf8'))
-
+const loadYaml = require('./loadYaml')
 
 const siteMetadata = loadYaml('./data/site-metadata.yml')
 const { trackingId } = siteMetadata
@@ -29,6 +25,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/img/carousel`,
         name: 'carousel-images'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img/`,
+        name: 'images'
       }
     },
     // This plugin exposes helper functions for processing
