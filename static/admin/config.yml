@@ -4,7 +4,7 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 
 media_folder: "/src/pages/img"
-public_folder: "../img"
+public_folder: "/img"
 
 collections:
 

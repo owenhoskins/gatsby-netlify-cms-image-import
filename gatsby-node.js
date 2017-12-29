@@ -1,23 +1,23 @@
 const path = require('path');
 const _ = require('lodash');
 
-exports.onCreateNode = ({
-  node,
-  getNode,
-  loadNodeContent,
-  boundActionCreators,
-}) => {
-  const { frontmatter } = node
-  if (frontmatter) {
-    // Removing slash from image paths added by Netlify CMS
-    const { image } = frontmatter
-    if (image) {
-      if (image.indexOf('/') === 0) {
-        frontmatter.image = image.substr(1)
-      }
-    }
-  }
-}
+// exports.onCreateNode = ({
+//   node,
+//   getNode,
+//   loadNodeContent,
+//   boundActionCreators,
+// }) => {
+//   const { frontmatter } = node
+//   if (frontmatter) {
+//     // Removing slash from image paths added by Netlify CMS
+//     const { image } = frontmatter
+//     if (image) {
+//       if (image.indexOf('/') === 0) {
+//         frontmatter.image = image.substr(1)
+//       }
+//     }
+//   }
+// }
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
