@@ -18,6 +18,8 @@
     "gatsby-source-filesystem": "^1.5.8",
     "gatsby-transformer-remark": "^1.7.17",
     "gatsby-transformer-sharp": "^1.6.13",
+    "react-images": "^0.5.14",
+    "react-photo-gallery": "^6.0.22",
     "react-slick": "^0.15.4",
     "slick-carousel": "^1.8.1"
   },
