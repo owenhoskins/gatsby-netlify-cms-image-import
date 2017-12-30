@@ -4,6 +4,25 @@ const loadYaml = require('./loadYaml')
 
 const adminConfig = loadYaml('./static/admin/config.yml')
 
+
+const adjustImagePath = nodePath => image => {
+  if (_.isString(image)) {
+    if (image.indexOf(adminConfig.public_folder) === 0) {
+      const nextImage = path.relative(
+        path.dirname(nodePath),
+        path.join(
+          __dirname,
+          adminConfig.media_folder,
+          image.substr(adminConfig.public_folder.length)
+        )
+      )
+      console.log('Adjusted image path', nextImage)
+      return nextImage
+    }
+  }
+  return image
+}
+
 exports.onCreateNode = ({
   node,
   getNode,
@@ -12,14 +31,16 @@ exports.onCreateNode = ({
 }) => {
   const { frontmatter } = node
   if (frontmatter) {
+    const adjust = adjustImagePath(node.fileAbsolutePath)
     const { image } = frontmatter
     if (image) {
-      if (image.indexOf(adminConfig.public_folder) === 0) {
-        frontmatter.image = path.relative(
-          path.dirname(node.fileAbsolutePath),
-          path.join(__dirname, adminConfig.media_folder, image.substr(adminConfig.public_folder.length))
-        )
-      }
+      node.frontmatter.image = adjust(image)
+    }
+    const { images } = frontmatter
+    if (images) {
+      node.frontmatter.images.forEach(obj => {
+        obj.image = adjust(obj.image)
+      })
     }
   }
 }

@@ -2,5 +2,7 @@
 templateKey: gallery
 path: /gallery
 title: Fotos
-photos: 
+images:
+  - image: /img/tower.png 
+  - image: /img/trains.png 
 ---

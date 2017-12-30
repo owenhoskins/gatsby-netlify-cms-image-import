@@ -1,5 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import PhotoGallery from '../components/PhotoGallery'
+
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
@@ -11,6 +13,19 @@ export default function Template({ data }) {
           {post.frontmatter.title}
         </h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div>
+          <PhotoGallery photos={
+            post.frontmatter.images.map(({
+              image: { childImageSharp: { sizes: {
+                aspectRatio, src, srcSet, sizes
+              }}}
+            }) => console.log(aspectRatio, sizes) || ({
+              width: aspectRatio, height: 1, src,
+              srcSet: srcSet.split(","),
+              sizes: [sizes]
+            }))
+          } />
+        </div>
       </div>
     </section>
   );
@@ -23,6 +38,18 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        images {
+          image {
+            childImageSharp {
+             sizes {
+               aspectRatio
+               src
+               srcSet
+               sizes
+             }
+            }
+          }
+        }
       }
     }
   }
