@@ -3,8 +3,8 @@ backend:
   repo: freie-schule-bergmeilen/website
   branch: master # Branch to update (optional; defaults to master)
 
-media_folder: "/src/pages/img"
-public_folder: "../img"
+media_folder: "static/img"
+public_folder: "/img"
 
 collections:
 

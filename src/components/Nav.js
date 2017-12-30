@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link';
-import logo from '../img/logo.svg';
+//import logo from '../img/logo.svg';
 import './nav.scss'
 import _ from 'lodash'
 import { css } from 'glamor'

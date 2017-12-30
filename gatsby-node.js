@@ -1,5 +1,8 @@
 const path = require('path');
 const _ = require('lodash');
+const loadYaml = require('./loadYaml')
+
+const adminConfig = loadYaml('./static/admin/config.yml')
 
 exports.onCreateNode = ({
   node,
@@ -9,11 +12,13 @@ exports.onCreateNode = ({
 }) => {
   const { frontmatter } = node
   if (frontmatter) {
-    // Removing slash from image paths added by Netlify CMS
     const { image } = frontmatter
     if (image) {
-      if (image.indexOf('/') === 0) {
-        frontmatter.image = image.substr(1)
+      if (image.indexOf(adminConfig.public_folder) === 0) {
+        frontmatter.image = path.relative(
+          path.dirname(node.fileAbsolutePath),
+          path.join(__dirname, adminConfig.media_folder, image.substr(adminConfig.public_folder.length))
+        )
       }
     }
   }

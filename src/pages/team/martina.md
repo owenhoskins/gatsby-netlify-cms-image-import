@@ -11,7 +11,7 @@ experience: >-
   Kindergarten. Entwicklung und Durchführung von Gesundheits-und
   Bewegungsprojekten in Zusammenarbeit mit Samowar Meilen, Kursleiterin
   Eltern-Kind Tanzen & Singen / Kindertanzen.
-image: ../img/martina-1024x575.jpg
+image: /img/martina-1024x575.jpg
 children:
   - name: Jara
     year: '2006'
