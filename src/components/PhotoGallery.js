@@ -2,6 +2,8 @@ import React from 'react'
 import Gallery from 'react-photo-gallery'
 import Lightbox from 'react-images';
 
+const ESC_KEY = 27
+
 
 export default class PhotoGallery extends React.Component {
   constructor() {
@@ -12,6 +14,23 @@ export default class PhotoGallery extends React.Component {
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this);
   }
+
+  handleKeyDown = (evt) => {
+    if (evt.keyCode === ESC_KEY) {
+      if (this.state.lightboxIsOpen) {
+        this.closeLightbox()
+      }
+    }
+  }
+
+  componentWillMount() {
+    document.addEventListener('keydown', this.handleKeyDown)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown)
+  }
+
   openLightbox(event, obj) {
     this.setState({
       currentImage: obj.index,
