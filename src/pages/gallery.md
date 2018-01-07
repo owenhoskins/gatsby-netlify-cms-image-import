@@ -4,9 +4,8 @@ path: /gallery
 title: Fotos
 images:
   - image: '/img/20170831_110953.jpg'
-  - image: '/img/20170831_114740.jpg'
-  - image: '/img/20170905_110932.jpg'
-  - image: '/img/20170907_093724.jpg'
+  - image: '/img/20170711_095700.jpg'
+  - image: '/img/20170713_094107.jpg'
   - image: '/img/20170921_153816.jpg'
   - image: '/img/20170928_102730.jpg'
   - image: '/img/20170928_115114_006.jpg'
@@ -17,6 +16,7 @@ images:
   - image: '/img/IMG_9740.jpg'
   - image: '/img/IMG_9743.jpg'
   - image: '/img/20160825_094953.jpg'
+  - image: '/img/20170907_093724.jpg'
   - image: '/img/20160829_152455_Richtone(HDR).jpg'
   - image: '/img/20160829_153110_Richtone(HDR).jpg'
   - image: '/img/20160908_093748_Richtone(HDR).jpg'
@@ -32,6 +32,8 @@ images:
   - image: '/img/20161117_144105_Richtone(HDR).jpg'
   - image: '/img/20161208_115701_Richtone(HDR).jpg'
   - image: '/img/20161212_103803.jpg'
+  - image: '/img/20170831_114740.jpg'
+  - image: '/img/20170905_110932.jpg'
   - image: '/img/20161213_082434_Richtone(HDR).jpg'
   - image: '/img/20170105_134846.jpg'
   - image: '/img/20170112_133804.jpg'
@@ -45,12 +47,10 @@ images:
   - image: '/img/20170601_144934.jpg'
   - image: '/img/20170626_085451.jpg'
   - image: '/img/20170703_111902.jpg'
-  - image: '/img/20170711_095700.jpg'
-  - image: '/img/20170713_094107.jpg'
-  - image: '/img/20170821_101356.jpg'
   - image: '/img/20170824_161921.jpg'
   - image: '/img/20160908_123348_Richtone(HDR).jpg'
   - image: '/img/20170828_104039.jpg'
   - image: '/img/20170828_115703(0).jpg'
+  - image: '/img/20170821_101356.jpg'
 ---
 ### Aus dem Schulalltag
