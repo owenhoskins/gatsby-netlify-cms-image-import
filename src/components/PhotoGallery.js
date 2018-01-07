@@ -1,6 +1,7 @@
 import React from 'react'
 import Gallery from 'react-photo-gallery'
-import Lightbox from 'react-images';
+import Lightbox from 'react-images'
+import Measure from 'react-measure'
 
 const ESC_KEY = 27
 
@@ -8,7 +9,10 @@ const ESC_KEY = 27
 export default class PhotoGallery extends React.Component {
   constructor() {
     super();
-    this.state = { currentImage: 0 };
+    this.state = {
+      currentImage: 0,
+      width: -1
+    };
     this.closeLightbox = this.closeLightbox.bind(this);
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
@@ -55,12 +59,27 @@ export default class PhotoGallery extends React.Component {
   }
   render() {
     const { photos, renderImage } = this.props
+    const { width } = this.state
     return (
       <div>
-        <Gallery
-          ImageComponent={renderImage}
-          photos={photos} onClick={this.openLightbox}
-        />
+        <Measure bounds onResize={
+          (contentRect) => this.setState({ width: contentRect.bounds.width })
+        }>
+          {
+            ({ measureRef }) =>
+              <div ref={measureRef}>
+                {width > 1 &&
+                <Gallery
+                  columns={
+                    width < 500 ? 1 : width < 760 ? 2 : width < 1024 ? 3 : 4
+                  }
+                  ImageComponent={renderImage}
+                  photos={photos} onClick={this.openLightbox}
+                />
+                }
+              </div>
+          }
+        </Measure>
         <Lightbox images={photos}
           onClose={this.closeLightbox}
           onClickPrev={this.gotoPrevious}
