@@ -44,8 +44,33 @@ collections:
 
   - name: special-pages
     label: Spezielle Seiten
-    folder: "src/pages"
     files:
+      - file: "src/pages/team2.md"
+        label: "Team2"
+        name: "team2"
+        fields:
+          - {label: "Template", name: "templateKey", widget: "hidden", default: "page"}
+          - {label: "Pfad", name: "path", widget: "hidden", default: "/team2"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - name: members
+            label: Mitglieder
+            widget: list
+            fields:
+              - {name: title, label: Name}
+              - {name: position, label: "Funktion an der Schule"}
+              - {name: experience, label: "Ausbildung/Berufserfahrung", required: false}
+              - {name: image, label: Foto, widget: image, required: false, class: "team"}
+              - name: children
+                label: Kinder
+                widget: list
+                required: false
+                fields:
+                  - {label: Name, name: name, widget: string}
+                  - {label: Year, name: year, widget: string}
+              - {name: order, label: Position, widget: number, default: 0}
+              - {name: body, widget: hidden, default: ""}
+
       - file: "src/pages/gallery.md"
         label: "Fotos"
         name: "gallery"
