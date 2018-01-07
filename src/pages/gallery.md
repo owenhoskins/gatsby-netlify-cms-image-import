@@ -1,7 +1,7 @@
 ---
 templateKey: gallery
 path: /gallery
-title: Fotos aus dem Schulalltag
+title: Fotos
 images:
   - image: '/img/20160825_094953.jpg'
   - image: '/img/20160829_152455_Richtone(HDR).jpg'
@@ -53,3 +53,4 @@ images:
   - image: '/img/IMG_9740.jpg'
   - image: '/img/IMG_9743.jpg'
 ---
+### Aus dem Schulalltag
