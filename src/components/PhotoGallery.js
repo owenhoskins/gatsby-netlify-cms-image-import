@@ -35,10 +35,13 @@ export default class PhotoGallery extends React.Component {
     });
   }
   render() {
-    const { photos } = this.props
+    const { photos, renderImage } = this.props
     return (
       <div>
-        <Gallery photos={photos} onClick={this.openLightbox} />
+        <Gallery
+          ImageComponent={renderImage}
+          photos={photos} onClick={this.openLightbox}
+        />
         <Lightbox images={photos}
           onClose={this.closeLightbox}
           onClickPrev={this.gotoPrevious}

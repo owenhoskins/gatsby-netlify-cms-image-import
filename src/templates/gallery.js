@@ -1,7 +1,30 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PhotoGallery from '../components/PhotoGallery'
+import Img from 'gatsby-image'
 
+
+const renderImage = (props) => {
+  const {
+    photo: { width, height, originalSizes },
+    margin,
+    onClick,
+  } = props
+  return (
+    <div
+      style={{
+        width,
+        height,
+        float: 'left',
+        margin,
+        cursor: 'pointer'
+      }}
+      onClick={(evt) => onClick(evt, props)}
+    >
+      <Img sizes={originalSizes} />
+    </div>
+  )
+}
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
@@ -14,17 +37,22 @@ export default function Template({ data }) {
         </h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <div>
-          <PhotoGallery photos={
-            post.frontmatter.images.map(({
-              image: { childImageSharp: { sizes: {
-                aspectRatio, src, srcSet, sizes
-              }}}
-            }) => console.log(aspectRatio, sizes) || ({
-              width: aspectRatio, height: 1, src,
-              srcSet: srcSet.split(","),
-              sizes: [sizes]
-            }))
-          } />
+          <PhotoGallery
+            renderImage={renderImage}
+            photos={
+              post.frontmatter.images.map(({
+                image: { childImageSharp: { sizes }}
+              }) => {
+                const { aspectRatio, src, srcSet } = sizes
+                return {
+                  width: aspectRatio, height: 1, src,
+                  srcSet: srcSet.split(","),
+                  sizes: [sizes.sizes],
+                  originalSizes: sizes,
+                }
+              })
+            }
+          />
         </div>
       </div>
     </section>
@@ -41,11 +69,8 @@ export const pageQuery = graphql`
         images {
           image {
             childImageSharp {
-             sizes {
-               aspectRatio
-               src
-               srcSet
-               sizes
+             sizes(maxWidth: 700) {
+               ...GatsbyImageSharpSizes
              }
             }
           }
