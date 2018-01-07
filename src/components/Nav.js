@@ -76,11 +76,11 @@ export default class Nav extends PureComponent {
       <div
         className="navbar-brand"
       >
-        <a href="../">
+        <Link to="/">
           <div {...styles.brand}>
             <h1 className="title">{title}</h1>
           </div>
-        </a>
+        </Link>
 
         <div
           className={
