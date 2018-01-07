@@ -5,6 +5,7 @@ import Link from 'gatsby-link';
 import './nav.scss'
 import _ from 'lodash'
 import { css } from 'glamor'
+import { window } from 'global'
 
 const styles = {
   brand: css({
@@ -60,11 +61,13 @@ export default class Nav extends PureComponent {
   }
 
   handleClickAdmin = () => {
-    if (window.netlifyIdentity) {
-      if (window.netlifyIdentity.currentUser()) {
-        document.location.href = "/admin/"
-      } else {
-        window.netlifyIdentity.open()
+    if(typeof window !== 'undefined') {
+      if (window.netlifyIdentity) {
+        if (window.netlifyIdentity.currentUser()) {
+          document.location.href = "/admin/"
+        } else {
+          window.netlifyIdentity.open()
+        }
       }
     }
   }

@@ -1,5 +1,4 @@
 import React from "react"
-import { window } from 'global'
 
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
