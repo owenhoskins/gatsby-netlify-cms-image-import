@@ -3,9 +3,18 @@ const loadYaml = require('./loadYaml')
 const siteMetadata = loadYaml('./data/site-metadata.yml')
 const { trackingId } = siteMetadata
 
+console.log('trackingId: ', trackingId, siteMetadata)
+
 module.exports = {
   siteMetadata: {
-    ...siteMetadata,
+    //...siteMetadata, this throws a syntax error annoyingly.
+    title: siteMetadata.title,
+    trackingId: siteMetadata.trackingId,
+    numEvents: siteMetadata.numEvents,
+    meta: {
+      description: siteMetadata.meta.description,
+      keywords: siteMetadata.meta.keywords
+    },
     goals: loadYaml('./data/goals.yml'),
     hero: loadYaml('./data/hero.yml'),
   },
